@@ -1,12 +1,17 @@
 <template name="layout">
-  <div class="container">
-    <header class="navbar navbar-default" role="navigation"> 
-      <div class="navbar-header">
-        <a class="navbar-brand" href="{{pathFor 'postsList'}}">Microscope</a>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    {{> header}}
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        {{> left_nav}}
       </div>
-    </header>
-    <div id="main" class="row-fluid">
-      {{> yield}}
+
+      <div id="main" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        {{> yield}}
+      </div>
     </div>
   </div>
 </template>
