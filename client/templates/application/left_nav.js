@@ -6,25 +6,25 @@ nav_list = {
 		{name: 'custom', text: '自定义监控'}
 	],
 	nav_repairs : [
-		{name: 'monitor', text: '维修状态'},
-		{name: 'solo', text: '维修记录'}
+		{name: 'repair', text: '维修状态'},
+		{name: 'repairlog', text: '维修记录'}
 	],
 	nav_services : [
-		{name: 'monitor', text: '维保状态'},
-		{name: 'solo', text: '年检状态'}
+		{name: 'service', text: '维保状态'},
+		{name: 'year', text: '年检状态'}
 	],
 	nav_statistics : [
-		{name: 'monitor', text: '故障统计'},
-		{name: 'solo', text: '运行时间'},
-		{name: 'group', text: '服务统计'}
+		{name: 'stat_broke', text: '故障统计'},
+		{name: 'stat_time', text: '运行时间'},
+		{name: 'stat_service', text: '服务统计'}
 	],
 	nav_messages : [
-		{name: 'monitor', text: '用户消息'},
-		{name: 'solo', text: '系统消息'}
+		{name: 'msg_user', text: '用户消息'},
+		{name: 'msg_sys', text: '系统消息'}
 	],
 	nav_options : [
-		{name: 'monitor', text: '账号管理'},
-		{name: 'solo', text: '设备管理'}
+		{name: 'users', text: '账号管理'},
+		{name: 'devices', text: '设备管理'}
 	]
 }
 
