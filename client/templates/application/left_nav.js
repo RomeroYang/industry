@@ -12,14 +12,10 @@ setTimeout(function() {
   	$("ul.nav > li > a").not($(this)).next().hide();
   	$("ul.nav > li > a").not($(this)).parent().removeClass('active');
     $(this).next().toggle();
-    $(this).parent().toggle(function() {
-    	console.log('aaa');
-    	console.log($(this));
-    	//$(this).addClass('active');
-    }, function() {
-    	console.log('bbb');
-    	console.log($(this));
-    	//$(this).removeClass('active');
-    });
+    if ($(this).parent().attr('class') == 'active') {
+    	$(this).parent().removeClass('active');
+    } else {
+    	$(this).parent().addClass('active');
+    }
   });
 }, 500);
