@@ -9,6 +9,7 @@
 
 setTimeout(function() {
   $("ul.nav > li > a").click(function(){
+  	$("ul.nav > li > a").not($(this)).next().hide();
     $(this).next().toggle();
   });
 }, 500);
