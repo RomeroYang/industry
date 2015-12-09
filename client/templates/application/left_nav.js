@@ -11,12 +11,11 @@ setTimeout(function() {
   $("ul.nav > li > a").click(function(){
   	$("ul.nav > li > a").not($(this)).next().hide();
   	$("ul.nav > li > a").not($(this)).parent().removeClass('active');
-    $(this).next().toggle(function() {
-    	$(this).show();
-    	$(this).parent().addClass('active');
+    $(this).next().toggle();
+    $(this).parent().toggle(function() {
+    	$(this).addClass('active');
     }, function() {
-    	$(this).hide();
-    	$(this).parent().removeClass('active');
+    	$(this).removeClass('active');
     });
   });
 }, 500);
