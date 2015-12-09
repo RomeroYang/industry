@@ -7,7 +7,7 @@
 //   options: nav_list.nav_options
 // });
 $(document).ready(function(){
-  $("li.nav_1 > a").click(function(){
+  $("ul.nav > li > a").click(function(){
     $(this).next().toggle();
   });
 });
