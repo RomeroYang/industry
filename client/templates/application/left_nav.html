@@ -3,10 +3,10 @@
     <li class="active">
       <a href="#">设备监控</a>
       <ul>
-        <li><a href="/navs/monitor">监控中心</a></li>
-        <li><a href="/navs/solo">单机监控</a></li>
-        <li><a href="/navs/group">群组监控</a></li>
-        <li><a href="/navs/custom">自定义监控</a></li>
+        <li><a href="/monitor">监控中心</a></li>
+        <li><a href="/solo">单机监控</a></li>
+        <li><a href="/group">群组监控</a></li>
+        <li><a href="/custom">自定义监控</a></li>
       </ul>
     </li>
   </ul>
@@ -14,25 +14,23 @@
     <li>
       <a href="">设备急修</a>
       <ul>
-        {{#each repairs}}
-          <li><a href="#">{{text}}</a></li>
-        {{/each}}
+        <li><a href="/repair">维修状态</a></li>
+        <li><a href="/repairlog">维修记录</a></li>
       </ul>
     </li>
     <li>
       <a href="">维保&年检</a>
       <ul>
-        {{#each services}}
-          <li><a href="#">{{text}}</a></li>
-        {{/each}}
+        <li><a href="/service">维保状态</a></li>
+        <li><a href="/year">年检状态</a></li>
       </ul>
     </li>
     <li>
       <a href="">数据统计</a>
       <ul>
-        {{#each statistics}}
-          <li><a href="#">{{text}}</a></li>
-        {{/each}}
+        <li><a href="/stat_broke">故障统计</a></li>
+        <li><a href="/stat_time">运行时间</a></li>
+        <li><a href="/stat_service">服务统计</a></li>
       </ul>
     </li>
   </ul>
@@ -40,20 +38,18 @@
     <li>
       <a href="">消息通知</a>
       <ul>
-        {{#each messages}}
-          <li><a href="#">{{text}}</a></li>
-        {{/each}}
+        <li><a href="/msg_user">用户消息</a></li>
+        <li><a href="/msg_sys">系统消息</a></li>
       </ul>
     </li>
     <li>
-      <a href="">账户信息</a>
+      <a href="/account">账户信息</a>
     </li>
     <li>
       <a href="">系统配置</a>
       <ul>
-        {{#each options}}
-          <li><a href="#">{{text}}</a></li>
-        {{/each}}
+        <li><a href="/users">账号管理</a></li>
+        <li><a href="/devices">设备管理</a></li>
       </ul>
     </li>
   </ul>

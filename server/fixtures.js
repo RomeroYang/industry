@@ -33,6 +33,8 @@ if (Navs.find().count() === 0) {
   Navs.insert({name: 'msg_user', text: '用户消息'});
   Navs.insert({name: 'msg_sys', text: '系统消息'});
 
+  Navs.insert({name: 'account', text: '账户信息'});
+
   Navs.insert({name: 'users', text: '账号管理'});
   Navs.insert({name: 'devices', text: '设备管理'});
 }
