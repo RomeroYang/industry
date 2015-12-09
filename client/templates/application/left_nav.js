@@ -6,8 +6,8 @@
 //   messages: nav_list.nav_messages,
 //   options: nav_list.nav_options
 // });
-$(document).ready(function(){
+//$(document).ready(function(){
   $("ul.nav > li > a").click(function(){
     $(this).next().toggle();
   });
-});
+//});
