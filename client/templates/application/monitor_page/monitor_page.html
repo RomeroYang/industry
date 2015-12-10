@@ -1,23 +1,14 @@
 <template name="monitorPage">
-  <div id="monitor_nav" class="row">
-    <ul class="nav nav-tabs">
-	  <li name="map" role="presentation" class="active"><a href="javascript:;">地图模式</a></li>
-	  <li name="index" role="presentation"><a href="javascript:;">索引模式</a></li>
-	</ul>
-  </div>
 
   <div id="map" class="row">
+  	<h3>监控中心</h3>
+  	<div>
+  		<label>监控类型：</label>
+		<select>
+			<option>故障地图</option>
+			<option>温度地图</option>
+		</select>
+  	</div>
     <img src="img/monitor_map.png">
-  </div>
-
-  <div style="display:none" id="index" class="row">
-    <div class="col-sm-3 col-md-3">
-    	<img src="img/monitor_index_left.png">
-    	left
-    </div>
-    <div class="col-sm-9 col-md-9">
-    	<img src="img/monitor_index_right.png">
-    	right
-    </div>
   </div>
 </template>
