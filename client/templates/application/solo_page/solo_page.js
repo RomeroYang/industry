@@ -6,4 +6,4 @@ setTimeout(function() {
       $("#solo_nav li").toggleClass('active');
     }
   });
-}, 500);
+}, 1000);
