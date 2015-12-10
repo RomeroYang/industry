@@ -1,144 +1,23 @@
 <template name="monitorPage">
-  <div class="post">
-    <div class="post-content">
-	<div class="contentright">
-		<div class="add">
-			当前位置 &gt; <a href="javascript:;" onclick="reshPage()">电梯监控</a>
-		</div>
-		<div class="gztx" style="margin-left: 0px; width: 100% !important">
-			<div class="toolbar" style="height: 50px; margin-top: 0; width: 100%">
-				<div class="toolbarblue"></div>
+  <div id="monitor_nav" class="row">
+    <ul class="nav nav-tabs">
+	  <li name="map" role="presentation" class="active"><a href="javascript:;">地图模式</a></li>
+	  <li name="index" role="presentation"><a href="javascript:;">索引模式</a></li>
+	</ul>
+  </div>
 
-				<div class="searchin style2">
-					<div style="margin-top: 8px; float: left">
-						<input id="chooseFilterValue" type="hidden" value="1">
-						<a id="chooseFilter" name="1"
-							style="margin-left: 5px; cursor: pointer; padding-left: 5px; text-decoration: none; width: 20px; height: 20px">
-							<img src="img/qiehuan.png" title="切换搜索对象" />
-						</a>
-					</div>
-					<div style="margin-top: 5px; margin-left: 5px; float: left">|</div>
-					<input id="txtSearch" value="搜索小区" type="text" class="searchinbox1"
-						style="width: 280px; color: #ACACAC" maxlength="80"> <input
-						id="btnSearch" type="button" class="searchinbt2"
-						style="background: none transparent scroll repeat 0% 0%">
-				</div>
-			</div>
+  <div id="map" class="row">
+    <img src="public/img/monitor_map.png">
+  </div>
 
-			<div class="contentrc2">
-				<table width="100%" class="docbgtable" border="0" cellspacing="0"
-					cellpadding="0">
-					<tr>
-						<td width="193" valign="top">
-							<div class="docleft">
-								<div class="areashow">
-									<span id="provincename" limit="6"></span><input type="hidden"
-										id="province" value=""><input type="hidden" id="city"
-										value=""><a href="javascript:;"> <input type="button"
-										style="cursor: pointer;" value="更改" class="asbt1" />
-									</a>
-								</div>
-								<div class="citybox">
-									<h3 class="citytit">
-										<img src="img/guan-bi.png" class="city_close" />
-									</h3>
-									<div class="city">
-										<span class="city_hot">省份</span>
-										<ul id="nowprovince"></ul>
-									</div>
-									<div class="city">
-										<span class="city_hot">拼音</span> <span class="city_code">
-											<a href="javascript:;" class="city_on" id="a"
-											onclick="pymSelected(this)">A</a> <a href="javascript:;" id="b"
-											onclick="pymSelected(this)">B</a> <a href="javascript:;" id="c"
-											onclick="pymSelected(this)">C</a> <a href="javascript:;" id="d"
-											onclick="pymSelected(this)">D</a> <a href="javascript:;" id="e"
-											onclick="pymSelected(this)">E</a> <a href="javascript:;" id="f"
-											onclick="pymSelected(this)">F</a> <a href="javascript:;" id="g"
-											onclick="pymSelected(this)">G</a> <a href="javascript:;" id="h"
-											onclick="pymSelected(this)">H</a> <a href="javascript:;" id="i"
-											onclick="pymSelected(this)">I</a> <a href="javascript:;" id="j"
-											onclick="pymSelected(this)">J</a> <a href="javascript:;" id="k"
-											onclick="pymSelected(this)">K</a> <a href="javascript:;" id="l"
-											onclick="pymSelected(this)">L</a> <a href="javascript:;" id="m"
-											onclick="pymSelected(this)">M</a> <a href="javascript:;" id="n"
-											onclick="pymSelected(this)">N</a> <a href="javascript:;" id="o"
-											onclick="pymSelected(this)">O</a> <a href="javascript:;" id="p"
-											onclick="pymSelected(this)">P</a> <a href="javascript:;" id="q"
-											onclick="pymSelected(this)">Q</a> <a href="javascript:;" id="r"
-											onclick="pymSelected(this)">R</a> <a href="javascript:;" id="s"
-											onclick="pymSelected(this)">S</a> <a href="javascript:;" id="t"
-											onclick="pymSelected(this)">T</a> <a href="javascript:;" id="u"
-											onclick="pymSelected(this)">U</a> <a href="javascript:;" id="v"
-											onclick="pymSelected(this)">V</a> <a href="javascript:;" id="w"
-											onclick="pymSelected(this)">W</a> <a href="javascript:;" id="x"
-											onclick="pymSelected(this)">X</a> <a href="javascript:;" id="y"
-											onclick="pymSelected(this)">Y</a> <a href="javascript:;" id="z"
-											onclick="pymSelected(this)">Z</a>
-										</span>
-										<ul id="selectprovince"></ul>
-									</div>
-								</div>
-
-								<ul id="treeLift" class="tree_children_list tree_root J_tree">
-								</ul>
-							</div> <input type="hidden" id="useunitID"
-							value="0">
-							<input type="hidden" id="areacode" value="">
-						</td>
-						<td align="center" class="remindtable2bg" valign="top"
-							style="padding-top: 12px; padding-left: 12px; padding-right: 12px;">
-							<input type="hidden" id="userType"
-							value="3" />
-							<table id="remindtable2" border="0" cellpadding="0"
-								cellspacing="0" bordercolor="#dbdbdb">
-								<thead>
-									<tr class="bg1">
-										<th style="display: none" width="5%"><input
-											type="checkbox" id="checkAll" onclick="chkAll()" /></th>
-										<th align="left">编号</th>
-										<th align="left">名称</th>
-										<th align="left">品牌</th>
-										<th align="left">梯种</th>
-										<th align="left">型号</th>
-										<th align="left">楼号</th>
-										<th align="left">梯号</th>
-										<th align="left">连通率</th>
-										<th align="left" style="display: none;">使用状态</th>
-										<th style="display: none;"></th>
-										<th style="display: none;"></th>
-										<th style="display: none;"></th>
-										<th style="display: none;"></th>
-										<!-- <th style="width: 60px">操作</th>	 -->						
-									</tr>
-								</thead>
-								<tbody>
-									<tr style="display: none">
-										<td style="display: none"><input type="checkbox" value="" /></td>
-										<td class="noTD" style="width: 160px;"><a class="no" style="cursor: pointer;color:#2e82d7;"></a></td>
-										<td class="nameTD" style="width: 200px;"></td>
-										<td class="brandTD" style="width: 110px;"></td>
-										<td class="productTypeTD" style="width: 80px;"></td>
-										<td class="modelTD" style="width: 100px;"></td>
-										<td class="buildno" style="width: 90px;"></td>
-										<td class="tino" style="width: 90px;"></td>
-										<td align="center" valign="middle" style="width: 60px;"><a href="javascript:;" onclick="openSelectedZbPage(this)"><img width="24" height="24" class="onlinePCT" title="" /></a></td>
-										<td class="useStateTD" style="display: none;"></td>
-										<td class="useunitid" style="display: none;"></td>
-										<td class="dtucode" style="display: none;"></td>
-										<td class="elevatorcode" style="display: none;"></td>
-										<td class="elevatorproducttypecode" style="display: none;"></td>
-										<!-- <td><a href="javascript:;" class="EditBtn" title="监控"><img
-												src="img/jiankong.png" style="vertical-align: middle;" /></a></td> -->
-									</tr>
-								</tbody>
-							</table>
-						</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-	</div>
+  <div style="display:none" id="index" class="row">
+    <div class="col-sm-3 col-md-2">
+    	<img src="public/img/monitor_index_left.png">
+    	left
+    </div>
+    <div class="col-sm-9 col-md-10">
+    	<img src="public/img/monitor_index_right.png">
+    	right
     </div>
   </div>
 </template>
