@@ -1,4 +1,4 @@
-setTimeout(function() {
+Template.soloPage.onRendered(function () {
   $("#solo_nav li a").click(function(){
     var name = $(this).parent().attr('name');
   	if ($('#'+name).css('display') == 'none') {
@@ -6,4 +6,4 @@ setTimeout(function() {
       $("#solo_nav li").toggleClass('active');
     }
   });
-}, 1000);
+});
