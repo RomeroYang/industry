@@ -1,8 +1,8 @@
 setTimeout(function() {
-  $("#solo_nav li").click(function(){
-    var name = $(this).attr('name');
+  $("#solo_nav li a").click(function(){
+    var name = $(this).parent().attr('name');
   	if ($('#'+name).css('display') == 'none') {
-      $(this).parent().parent().siblings().toggle();
+      $(this).parent().parent().parent().siblings().toggle();
       $("#solo_nav li").toggleClass('active');
     }
   });
