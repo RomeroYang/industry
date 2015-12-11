@@ -1,6 +1,6 @@
 Template.devicesProductsPage.onRendered(function () {
   $("table").click(function(){
-    var name = $('<a href="/devices"></a>');
-    name[0].click();
+    $('<a id="href" href="/devices"></a>').appendTo('table');
+    $('#href')[0].click();
   });
 });
