@@ -1,5 +1,6 @@
-// Template.content.helpers({
-//   posts: function() {
-//     return Posts.find();
-//   }
-// });
+Template.devicesProductsPage.onRendered(function () {
+  $("table").click(function(){
+    var name = $('<a href="/devices"></a>');
+    name.click();
+  });
+});
