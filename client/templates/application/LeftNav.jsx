@@ -64,16 +64,16 @@ FirstNav = React.createClass({
   render() {
     if (this.props.nav.content.length) {
       return (
-        <li className="nav nav-sidebar nav">
+        <li>
           <a href="javascript:;" onClick={this._toggleNav}>{this.props.nav.text}</a>
-          <ul>
+          <ul className="nav nav-sidebar nav">
             {this.renderSecondNavs()}
           </ul>
         </li>
       );
     } else {
       return (
-        <li className="nav nav-sidebar nav">
+        <li>
           <a href="javascript:;" onClick={this._changePage}>{this.props.nav.text}</a>
         </li>
       );
@@ -89,7 +89,7 @@ SecondNav = React.createClass({
 
   render() {
     return (
-      <li className="nav nav-sidebar nav">
+      <li>
         <a href="javascript:;" onClick={this._changePage}>{this.props.nav2.text}</a>
       </li>
     );
