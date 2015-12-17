@@ -86,8 +86,8 @@ FirstNav = React.createClass({
     if (this.props.nav.content.length) {
       return (
         <li className={ifClass}>
-          <a href="javascript:;" onClick={this._toggleNav}><img src={"/img/"+this.props.nav.name+imageEnd} />{this.props.nav.text}</a>
-          <ul style={{display:ifDisplay}}>
+          <a href="javascript:;" onClick={this._toggleNav}><img className="left-nav-logo" src={"/img/"+this.props.nav.name+imageEnd} />{this.props.nav.text}</a>
+          <ul className="nav" style={{display:ifDisplay}}>
             {this.renderSecondNavs()}
           </ul>
         </li>
@@ -95,7 +95,7 @@ FirstNav = React.createClass({
     } else {
       return (
         <li className={ifClass}>
-          <a href="javascript:;" onClick={this._toggleNav}><img src={"/img/"+this.props.nav.name+imageEnd} />{this.props.nav.text}</a>
+          <a href="javascript:;" onClick={this._toggleNav}><img className="left-nav-logo" src={"/img/"+this.props.nav.name+imageEnd} />{this.props.nav.text}</a>
         </li>
       );
     }
@@ -112,7 +112,7 @@ SecondNav = React.createClass({
 
     var ifActive = this.props.currentPage == this.props.nav2.name? 'active':'';
     return (
-      <li className={ifActive}>
+      <li className={"left-nav2 "+ifActive}>
         <a href="javascript:;" onClick={this._changePage}>{this.props.nav2.text}</a>
       </li>
     );
