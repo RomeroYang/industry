@@ -75,13 +75,16 @@ FirstNav = React.createClass({
 
   render() {
 
-    var ifActive = this.props.activeNav == this.props.nav.name? 'active':'';
+    var ifActive = this.props.activeNav == this.props.nav.name? true:false;
+    var ifClass = ifActive? 'active':'';
+    var ifDisplay = ifActive? 'block':'none';
+    var imageEnd = ifActive? '_p.svg':'_n.svg';
 
     if (this.props.nav.content.length) {
       return (
         <li className={ifActive}>
-          <a href="javascript:;" onClick={this._toggleNav}><img src={"/img/"+this.props.nav.name+".svg"} />{this.props.nav.text}</a>
-          <ul style={{display:"none"}}>
+          <a href="javascript:;" onClick={this._toggleNav}><img src={"/img/"+this.props.nav.name+imageEnd} />{this.props.nav.text}</a>
+          <ul style={{display:ifDisplay}}>
             {this.renderSecondNavs()}
           </ul>
         </li>
@@ -89,7 +92,7 @@ FirstNav = React.createClass({
     } else {
       return (
         <li className={ifActive}>
-          <a href="javascript:;" onClick={this._changePage}>{this.props.nav.text}</a>
+          <a href="javascript:;" onClick={this._toggleNav;this._changePage}>{this.props.nav.text}</a>
         </li>
       );
     }
@@ -103,7 +106,7 @@ SecondNav = React.createClass({
   },
 
   render() {
-    
+
     var ifActive = this.props.currentPage == this.props.nav2.name? 'active':'';
     return (
       <li className={ifActive}>
