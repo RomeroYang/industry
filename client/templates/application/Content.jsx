@@ -55,7 +55,7 @@ Content = React.createClass({
       case 'repair_history':
         return (
           <div className="container-fluid">
-            this is repair_history
+            <RepairHistoryPage changePage={this.props.changePage} />
           </div>
         );
         break;
@@ -69,21 +69,42 @@ Content = React.createClass({
       case 'data_info':
         return (
           <div className="container-fluid">
-            this is data_info
+            <DataInfoPage changePage={this.props.changePage} />
+          </div>
+        );
+        break;
+      case 'data_info_detail':
+        return (
+          <div className="container-fluid">
+            <DataInfoDetailPage changePage={this.props.changePage} />
           </div>
         );
         break;
       case 'data_repair':
         return (
           <div className="container-fluid">
-            this is data_repair
+            <DataRepairPage changePage={this.props.changePage} />
+          </div>
+        );
+        break;
+      case 'data_repair_detail':
+        return (
+          <div className="container-fluid">
+            <DataRepairDetailPage changePage={this.props.changePage} />
           </div>
         );
         break;
       case 'data_year':
         return (
           <div className="container-fluid">
-            this is data_year
+            <DataYearPage changePage={this.props.changePage} />
+          </div>
+        );
+        break;
+      case 'data_year_detail':
+        return (
+          <div className="container-fluid">
+            <DataYearDetailPage changePage={this.props.changePage} />
           </div>
         );
         break;
