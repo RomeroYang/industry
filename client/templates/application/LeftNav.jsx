@@ -82,7 +82,7 @@ FirstNav = React.createClass({
 
     if (this.props.nav.content.length) {
       return (
-        <li className={ifActive}>
+        <li className={ifClass}>
           <a href="javascript:;" onClick={this._toggleNav}><img src={"/img/"+this.props.nav.name+imageEnd} />{this.props.nav.text}</a>
           <ul style={{display:ifDisplay}}>
             {this.renderSecondNavs()}
@@ -91,8 +91,8 @@ FirstNav = React.createClass({
       );
     } else {
       return (
-        <li className={ifActive}>
-          <a href="javascript:;" onClick={this._toggleNav;this._changePage}>{this.props.nav.text}</a>
+        <li className={ifClass}>
+          <a href="javascript:;" onClick={this._toggleNav;this._changePage}><img src={"/img/"+this.props.nav.name+imageEnd} />{this.props.nav.text}</a>
         </li>
       );
     }
