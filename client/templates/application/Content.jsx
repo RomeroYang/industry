@@ -129,6 +129,19 @@ Content = React.createClass({
           </div>
         );
         break;
+      case 'manage_system':
+        return (
+          <div className="container-fluid">
+            this is manage_system
+          </div>
+        );
+        break;
+      default:
+        return (
+          <div className="container-fluid">
+            404 not found
+          </div>
+        );
     }
   }
 });

@@ -1,4 +1,17 @@
 Header = React.createClass({
+
+  _changPageHome() {
+    this.props.changePage('home');
+  },
+
+  _changPageMessage() {
+    this.props.changePage('message_system');
+  },
+
+  _changPageAccount() {
+    this.props.changePage('account');
+  },
+
   render() {
     return (
       <div className="container-fluid">
@@ -13,9 +26,9 @@ Header = React.createClass({
         </div>
         <div id="navbar" className="navbar-collapse collapse">
           <ul className="nav navbar-nav navbar-right">
-            <li><a href="/">home</a></li>
-            <li><a href="/msg_sys">messages</a></li>
-            <li><a href="/account">Profile</a></li>
+            <li><a href="javascript:;" onClick={this._changPageHome} ><img src="/img/header_home.svg" /></a></li>
+            <li><a href="javascript:;" onClick={this._changPageMessage} ><img src="/img/header_msg.svg" /></a></li>
+            <li><a href="javascript:;" onClick={this._changPageAccount} ><img src="/img/header_head.svg" /></a></li>
           </ul>
         </div>
       </div>
