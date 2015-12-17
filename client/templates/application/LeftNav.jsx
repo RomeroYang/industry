@@ -42,7 +42,7 @@ LeftNav = React.createClass({
 
   render() {
     return (
-      <ul class="nav nav-sidebar nav">
+      <ul className="nav nav-sidebar nav">
         {this.renderFirstNavs()}
       </ul>
     );
@@ -64,8 +64,8 @@ FirstNav = React.createClass({
   render() {
     if (this.props.nav.content.length) {
       return (
-        <li class="nav nav-sidebar nav">
-          <a onClick={this._toggleNav}>{this.props.nav.text}</a>
+        <li className="nav nav-sidebar nav">
+          <a href="javascript:;" onClick={this._toggleNav}>{this.props.nav.text}</a>
           <ul>
             {this.renderSecondNavs()}
           </ul>
@@ -73,8 +73,8 @@ FirstNav = React.createClass({
       );
     } else {
       return (
-        <li class="nav nav-sidebar nav">
-          <a onClick={this._changePage}>{this.props.nav.text}</a>
+        <li className="nav nav-sidebar nav">
+          <a href="javascript:;" onClick={this._changePage}>{this.props.nav.text}</a>
         </li>
       );
     }
@@ -84,13 +84,13 @@ FirstNav = React.createClass({
 SecondNav = React.createClass({
 
   _changePage() {
-    this.props.changePage(this.props.nav.name);
+    this.props.changePage(this.props.nav2.name);
   },
 
   render() {
     return (
-      <li class="nav nav-sidebar nav">
-        <a onClick={this._changePage}>{this.props.nav2.text}</a>
+      <li className="nav nav-sidebar nav">
+        <a href="javascript:;" onClick={this._changePage}>{this.props.nav2.text}</a>
       </li>
     );
   }
