@@ -36,7 +36,7 @@ LeftNav = React.createClass({
 
   renderFirstNavs() {
     return this.getNavs().map((nav) => {
-      return <FirstNav key={nav.name} nav={nav} changePage={this.props.changePage} />;
+      return <FirstNav currentPage={this.props.currentPage} key={nav.name} nav={nav} changePage={this.props.changePage} />;
     });
   },
 
