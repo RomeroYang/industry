@@ -9,7 +9,7 @@ Header = React.createClass({
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <a className="navbar-brand" href="/"><img src="/img/mxchip.svg"></a>
+          <a className="navbar-brand" href="/"><img src="/img/mxchip.svg" /></a>
         </div>
         <div id="navbar" className="navbar-collapse collapse">
           <ul className="nav navbar-nav navbar-right">

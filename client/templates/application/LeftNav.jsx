@@ -59,7 +59,7 @@ FirstNav = React.createClass({
 
   _changePage() {
     this.props.changePage(this.props.nav.name);
-  }
+  },
 
   render() {
     if (this.props.nav.content.length) {
