@@ -66,7 +66,7 @@ FirstNav = React.createClass({
       return (
         <li>
           <a href="javascript:;" onClick={this._toggleNav}>{this.props.nav.text}</a>
-          <ul style="display:none">
+          <ul style={{display:"none"}}>
             {this.renderSecondNavs()}
           </ul>
         </li>
