@@ -111,6 +111,7 @@ SecondNav = React.createClass({
   render() {
 
     var ifActive = this.props.currentPage == this.props.nav2.name? 'active':'';
+    console.log(ifActive);
     return (
       <li className={"left-nav2 "+ifActive}>
         <a href="javascript:;" onClick={this._changePage}>{this.props.nav2.text}</a>
