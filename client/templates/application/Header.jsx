@@ -28,7 +28,7 @@ Header = React.createClass({
           <ul className="nav navbar-nav navbar-right">
             <li><a href="javascript:;" onClick={this._changPageHome} ><img src="/img/header_home.svg" /></a></li>
             <li><a href="javascript:;" onClick={this._changPageMessage} ><img src="/img/header_msg.svg" /></a></li>
-            <li><a href="javascript:;" onClick={this._changPageAccount} ><img src="/img/header_head.svg" /></a></li>
+            <li><a className="head-img" href="javascript:;" onClick={this._changPageAccount} ><img src="/img/header_head.png" /></a></li>
           </ul>
         </div>
       </div>

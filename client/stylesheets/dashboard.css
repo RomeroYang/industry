@@ -27,6 +27,10 @@ body {
   min-height: 64px;
 }
 
+.nav .head-img {
+  padding: 10px 15px;
+}
+
 /*
  * Sidebar
  */
