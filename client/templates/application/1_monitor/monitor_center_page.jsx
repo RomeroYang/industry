@@ -11,7 +11,7 @@ MonitorCenterPage = React.createClass({
           <option>温度地图</option>
         </select>
         </div>
-        <img src="img/monitor_map.png">
+        <img src="img/monitor_map.png" />
       </div>
     );
   }
