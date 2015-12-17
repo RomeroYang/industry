@@ -1,7 +1,7 @@
 DataYearPage = React.createClass({
 
   _changePage() {
-    this.props.changePage('data_yaer_detail');
+    this.props.changePage('data_year_detail');
   },
 
   render() {

@@ -10,6 +10,7 @@ Content = React.createClass({
           </div>
         );
         break;
+
       case 'monitor_center':
         return (
           <div className="container-fluid">
@@ -38,6 +39,7 @@ Content = React.createClass({
           </div>
         );
         break;
+
       case 'repair_status':
         return (
           <div className="container-fluid">
@@ -66,6 +68,7 @@ Content = React.createClass({
           </div>
         );
         break;
+
       case 'data_info':
         return (
           <div className="container-fluid">
@@ -108,6 +111,7 @@ Content = React.createClass({
           </div>
         );
         break;
+
       case 'stat_broke':
         return (
           <div className="container-fluid">
@@ -129,6 +133,7 @@ Content = React.createClass({
           </div>
         );
         break;
+        
       case 'message_user':
         return (
           <div className="container-fluid">
