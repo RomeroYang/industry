@@ -45,10 +45,24 @@ Content = React.createClass({
           </div>
         );
         break;
+      case 'repair_track':
+        return (
+          <div className="container-fluid">
+            <RepairTrackPage changePage={this.props.changePage} />
+          </div>
+        );
+        break;
       case 'repair_history':
         return (
           <div className="container-fluid">
             this is repair_history
+          </div>
+        );
+        break;
+      case 'repair_log':
+        return (
+          <div className="container-fluid">
+            <RepairLogPage changePage={this.props.changePage} />
           </div>
         );
         break;
