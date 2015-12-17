@@ -11,7 +11,7 @@ MonitorSoloPage = React.createClass({
 		  </div>
 
 		  <div id="map" className="row">
-		    <img src="img/solo_map.png">
+		    <img src="img/solo_map.png" />
 		  </div>
 
 		  <div style="display:none" id="index" className="row">
