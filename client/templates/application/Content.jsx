@@ -6,42 +6,42 @@ Content = React.createClass({
       case 'home':
         return (
           <div className="container-fluid">
-            this is home
+            Welcome To MXCHIP IoT Site
           </div>
         );
         break;
       case 'monitor_center':
         return (
           <div className="container-fluid">
-            this is monitor_center
+            <MonitorCenterPage changePage={this.props.changePage} />
           </div>
         );
         break;
       case 'monitor_solo':
         return (
           <div className="container-fluid">
-            this is monitor_solo
+            <MonitorSoloPage changePage={this.props.changePage} />
           </div>
         );
         break;
       case 'monitor_group':
         return (
           <div className="container-fluid">
-            this is monitor_group
+            <MonitorGroupPage changePage={this.props.changePage} />
           </div>
         );
         break;
       case 'monitor_cunstom':
         return (
           <div className="container-fluid">
-            this is monitor_cunstom
+            <MonitorCustomPage changePage={this.props.changePage} />
           </div>
         );
         break;
       case 'repair_status':
         return (
           <div className="container-fluid">
-            this is repair_status
+            <RepairStatusPage changePage={this.props.changePage} />
           </div>
         );
         break;
