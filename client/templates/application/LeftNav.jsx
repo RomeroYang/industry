@@ -65,7 +65,7 @@ FirstNav = React.createClass({
     if (this.props.nav.content.length) {
       return (
         <li>
-          <a href="javascript:;" onClick={this._toggleNav}>{this.props.nav.text}</a>
+          <a href="javascript:;" onClick={this._toggleNav}><img src={"/img/"+this.props.nav.name+".svg"} />{this.props.nav.text}</a>
           <ul style={{display:"none"}}>
             {this.renderSecondNavs()}
           </ul>

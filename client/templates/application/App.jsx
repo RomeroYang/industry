@@ -18,7 +18,7 @@ App = React.createClass({
       <div>
 
         <nav className="navbar navbar-inverse navbar-fixed-top">
-          <Header />
+          <Header changePage={this._changePage} />
         </nav>
 
         <div className="container-fluid">
@@ -28,7 +28,7 @@ App = React.createClass({
             </div>
 
             <div id="main" className="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-              <Content currentPage={this.state.currentPage} />
+              <Content currentPage={this.state.currentPage} changePage={this._changePage} />
             </div>
           </div>
         </div>
