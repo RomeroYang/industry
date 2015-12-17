@@ -14,7 +14,7 @@ MonitorSoloPage = React.createClass({
 		    <img src="img/solo_map.png" />
 		  </div>
 
-		  <div style="display:none" id="index" className="row">
+		  <div style={{display:"none"}} id="index" className="row">
 		    <div className="col-sm-3 col-md-3">
 		    	<img src="img/solo_index_left.png" />
 		    </div>
