@@ -53,7 +53,7 @@ FirstNav = React.createClass({
  
   renderSecondNavs() {
     return this.props.nav.content.map((nav2) => {
-      return <SecondNav key={nav2.name} nav2={nav2} changePage={this.props.changePage} />;
+      return <SecondNav currentPage={this.props.currentPage} key={nav2.name} nav2={nav2} changePage={this.props.changePage} />;
     });
   },
 
@@ -62,9 +62,18 @@ FirstNav = React.createClass({
   },
 
   render() {
+    var current_page = this.props.currentPage;
+    var page_name;
+    if (current_page.match('_')) {
+      page_name = current_page.split('_')[0];
+    } else {
+      page_name = current_page;
+    }
+    var ifActive = page_name == this.props.nav.name? 'active':'';
+
     if (this.props.nav.content.length) {
       return (
-        <li>
+        <li className={ifActive}>
           <a href="javascript:;" onClick={this._toggleNav}><img src={"/img/"+this.props.nav.name+".svg"} />{this.props.nav.text}</a>
           <ul style={{display:"none"}}>
             {this.renderSecondNavs()}
@@ -73,7 +82,7 @@ FirstNav = React.createClass({
       );
     } else {
       return (
-        <li>
+        <li className={ifActive}>
           <a href="javascript:;" onClick={this._changePage}>{this.props.nav.text}</a>
         </li>
       );
@@ -88,8 +97,10 @@ SecondNav = React.createClass({
   },
 
   render() {
+    var current_page = this.props.currentPage;
+    var ifActive = current_page == this.props.nav2.name? 'active':'';
     return (
-      <li>
+      <li className={ifActive}>
         <a href="javascript:;" onClick={this._changePage}>{this.props.nav2.text}</a>
       </li>
     );
