@@ -76,6 +76,10 @@ body {
   padding-left: 56px !important;
   color: #666;
 }
+.left-nav2 > a.active {
+  color: #fff;
+  background-color: #ddd;
+}
 
 
 /*
