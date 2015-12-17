@@ -65,6 +65,9 @@ FirstNav = React.createClass({
 
   _toggleNav() {
     this.props.toggleNav(this.props.nav.name);
+    if (this.props.nav.name == 'account') {
+      this.props.changePage(this.props.nav.name);
+    }
   },
  
   renderSecondNavs() {
@@ -92,7 +95,7 @@ FirstNav = React.createClass({
     } else {
       return (
         <li className={ifClass}>
-          <a href="javascript:;" onClick={this._toggleNav;this._changePage}><img src={"/img/"+this.props.nav.name+imageEnd} />{this.props.nav.text}</a>
+          <a href="javascript:;" onClick={this._toggleNav}><img src={"/img/"+this.props.nav.name+imageEnd} />{this.props.nav.text}</a>
         </li>
       );
     }
