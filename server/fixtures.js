@@ -1,19 +1,28 @@
-// if (Posts.find().count() === 0) {
-//   Posts.insert({
-//     title: 'Introducing Telescope',
-//     url: 'http://sachagreif.com/introducing-telescope/'
-//   });
-
-//   Posts.insert({
-//     title: 'Meteor',
-//     url: 'http://meteor.com'
-//   });
-
-//   Posts.insert({
-//     title: 'The Meteor Book',
-//     url: 'http://themeteorbook.com'
-//   });
-// }
+if (Devices.find().count() === 0) {
+    $.ajax({
+        type : 'post',
+        url : 'http://api.easylink.io/v1/device/fetchByPage',
+        headers : {
+            "Authorization" : "token a1863b45-d3f3-454d-b951-ab58adfc7ec8",
+            "X-Application-Id" : 'cc855e1a-f0f6-43c8-aeda-914b1f054e92',
+            //"X-Request-Sign" : signString
+        },
+        data : {
+            'limit' : 10
+        },
+        success : function(data) {
+        	var result = data;
+        	for (var i = 0; i < result.length; i++) {
+        		var device_item = result[i];
+        		device_item._id = device_item.id;
+        		Posts.insert(device_item);
+        	};
+        },
+        error : function(data) {
+            console.log("失败了" + data.responseText);
+        }
+    });
+}
 // if (Navs.find().count() === 0) {
 //   Navs.insert({name: 'monitor', text: '监控中心'});
 //   Navs.insert({name: 'solo', text: '单机监控'});

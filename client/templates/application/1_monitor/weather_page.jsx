@@ -1,4 +1,4 @@
-MonitorSoloPage = React.createClass({
+WeatherPage = React.createClass({
   // This mixin makes the getMeteorData method work
   mixins: [ReactMeteorData],
 
@@ -7,7 +7,7 @@ MonitorSoloPage = React.createClass({
     let query = {};
 
     return {
-      devices: Devices.find(query, {sort: {created: -1}}).fetch()
+      devices: Devices.find(query).fetch()
     };
   },
 
@@ -46,18 +46,24 @@ Device = React.createClass({
 
   render() {
 
-    const taskClassName = this.props.task.checked ? "checked" : "";
+    const panelClassName = this.props.device.online-0 ? "panel panel-primary" : "panel panel-default";
 
     return (
       <li className={taskClassName}>
-        <div className="panel panel-default">
-		  <div className="panel-heading">
-		    <h3 className="panel-title">Panel title</h3>
-		  </div>
-		  <div className="panel-body">
-		    Panel content
-		  </div>
-		</div>
+        <div className={panelClassName}>
+    		  <div className="panel-heading">
+    		    <h3 className="panel-title">{this.props.device.id}</h3>
+    		  </div>
+    		  <div className="panel-body">
+    		    <table>
+              <tr>
+                <td>MAC: {this.props.device.MAC}</td>
+                <td>alias: {this.props.device.alias}</td>
+                <td>created: {this.props.device.created}</td>
+              </tr>
+            </table>
+    		  </div>
+    		</div>
       </li>
     );
   }

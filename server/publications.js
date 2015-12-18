@@ -1,6 +1,6 @@
-// Meteor.publish('posts', function() {
-//   return Posts.find();
-// });
+Meteor.publish('devices', function() {
+  return Devices.find();
+});
 // Meteor.publish('navs', function() {
 //   return Navs.find();
 // });

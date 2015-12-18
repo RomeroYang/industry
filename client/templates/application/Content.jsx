@@ -39,6 +39,13 @@ Content = React.createClass({
           </div>
         );
         break;
+      case 'weather':
+        return (
+          <div className="container-fluid">
+            <WeatherPage changePage={this.props.changePage} deviceId={this.props.deviceId} />
+          </div>
+        );
+        break;
 
       case 'repair_status':
         return (
