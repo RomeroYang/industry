@@ -1,4 +1,4 @@
-if (Meteor.isServer) {
+if (Devices.find().count() === 0) {
 	HTTP.call(
 		"POST", 
 		"http://api.easylink.io/v1/device/fetchByPage",
