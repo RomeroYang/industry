@@ -18,7 +18,7 @@ if (Meteor.isServer) {
 		    	for (var i = 0; i < result.length; i++) {
 		    		var device_item = result[i];
 		    		device_item._id = device_item.id;
-		    		Posts.insert(device_item);
+		    		Devices.insert(device_item);
 		    	};
 			}
 		}
