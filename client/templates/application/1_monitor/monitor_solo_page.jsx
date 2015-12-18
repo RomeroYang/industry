@@ -40,7 +40,7 @@ Device = React.createClass({
     device: React.PropTypes.object.isRequired
   },
 
-  _changePage: {
+  _changePage() {
   	this.props.changePage('weather', this.props.device.id);
   },
 
