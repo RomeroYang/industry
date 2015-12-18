@@ -1,4 +1,5 @@
-if (Devices.find().count() === 0) {
+if (Meteor.isServer) {
+	Devices.insert({name: 'fixtures', status: 'httpstart'});
 	HTTP.call(
 		"POST", 
 		"http://api.easylink.io/v1/device/fetchByPage",
@@ -24,6 +25,7 @@ if (Devices.find().count() === 0) {
 			}
 		}
 	);
+	Devices.insert({name: 'fixtures', status: 'httpend'});
 }
 // if (Navs.find().count() === 0) {
 //   Navs.insert({name: 'monitor', text: '监控中心'});
