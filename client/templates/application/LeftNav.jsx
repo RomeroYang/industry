@@ -27,8 +27,8 @@ LeftNav = React.createClass({
       ] },
       { name: 'account', text: "账户信息", content: [] },
       { name: 'manage', text: "管理设置", content: [
-        { name: 'manage_user', text: "账号管理"},
-        { name: 'manage_device', text: "设备管理"},
+        { name: 'manage_users', text: "账号管理"},
+        { name: 'manage_devices', text: "设备管理"},
         { name: 'manage_system', text: "系统配置"}
       ] }
     ];
