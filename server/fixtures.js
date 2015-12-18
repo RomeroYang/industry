@@ -1,27 +1,28 @@
-if (Devices.find().count() === 0) {
-    $.ajax({
-        type : 'post',
-        url : 'http://api.easylink.io/v1/device/fetchByPage',
-        headers : {
-            "Authorization" : "token a1863b45-d3f3-454d-b951-ab58adfc7ec8",
-            "X-Application-Id" : 'cc855e1a-f0f6-43c8-aeda-914b1f054e92',
-            //"X-Request-Sign" : signString
-        },
-        data : {
-            'limit' : 10
-        },
-        success : function(data) {
-        	var result = data;
-        	for (var i = 0; i < result.length; i++) {
-        		var device_item = result[i];
-        		device_item._id = device_item.id;
-        		Posts.insert(device_item);
-        	};
-        },
-        error : function(data) {
-            console.log("失败了" + data.responseText);
-        }
-    });
+if (Meteor.isServer) {
+	HTTP.call(
+		"POST", 
+		"http://api.easylink.io/v1/device/fetchByPage",
+		{
+			headers: {
+	            "Authorization" : "token a1863b45-d3f3-454d-b951-ab58adfc7ec8",
+	            "X-Application-Id" : 'cc855e1a-f0f6-43c8-aeda-914b1f054e92'
+			}, 
+			data: {
+				limit: 10
+			}
+		},
+		function (error, result) {
+			if (error) {
+		        console.log("失败了" + error);
+			} else {
+		    	for (var i = 0; i < result.length; i++) {
+		    		var device_item = result[i];
+		    		device_item._id = device_item.id;
+		    		Posts.insert(device_item);
+		    	};
+			}
+		}
+	);
 }
 // if (Navs.find().count() === 0) {
 //   Navs.insert({name: 'monitor', text: '监控中心'});
