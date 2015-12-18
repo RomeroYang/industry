@@ -129,7 +129,7 @@ Content = React.createClass({
       case 'stat_service':
         return (
           <div className="container-fluid">
-            <StatservicePage changePage={this.props.changePage} />
+            <StatServicePage changePage={this.props.changePage} />
           </div>
         );
         break;

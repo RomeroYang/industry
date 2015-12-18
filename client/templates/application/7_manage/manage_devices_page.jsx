@@ -1,7 +1,7 @@
 ManageDevicesProductsPage = React.createClass({
 
   _changePage() {
-    this.props.changePage('manage_devices_page');
+    this.props.changePage('manage_devices');
   },
 
   render() {
