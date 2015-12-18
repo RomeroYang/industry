@@ -7,7 +7,7 @@ MonitorSoloPage = React.createClass({
     let query = {};
 
     return {
-      devices: Devices.find(query, {sort: {created: -1}}).fetch()
+      devices: Devices.find(query).fetch()
     };
   },
 
@@ -46,16 +46,22 @@ Device = React.createClass({
 
   render() {
 
-    const taskClassName = this.props.task.checked ? "checked" : "";
+    const panelClassName = this.props.device.online-0 ? "panel panel-primary" : "panel panel-default";
 
     return (
-      <li className={taskClassName}>
-        <div className="panel panel-default">
+      <li>
+        <div className={panelClassName}>
 		  <div className="panel-heading">
-		    <h3 className="panel-title">Panel title</h3>
+		    <h3 className="panel-title">{this.props.device.id}</h3>
 		  </div>
 		  <div className="panel-body">
-		    Panel content
+		    <table>
+	          <tr>
+	            <td>MAC: {this.props.device.MAC}</td>
+	            <td>alias: {this.props.device.alias}</td>
+	            <td>created: {this.props.device.created}</td>
+	          </tr>
+	        </table>
 		  </div>
 		</div>
       </li>
