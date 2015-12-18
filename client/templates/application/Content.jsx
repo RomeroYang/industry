@@ -115,67 +115,77 @@ Content = React.createClass({
       case 'stat_broke':
         return (
           <div className="container-fluid">
-            this is stat_broke
+            <StatBrokePage changePage={this.props.changePage} />
           </div>
         );
         break;
       case 'stat_runtime':
         return (
           <div className="container-fluid">
-            this is stat_runtime
+            <StatRuntimePage changePage={this.props.changePage} />
           </div>
         );
         break;
       case 'stat_service':
         return (
           <div className="container-fluid">
-            this is stat_service
+            <StatservicePage changePage={this.props.changePage} />
           </div>
         );
         break;
-        
+
       case 'message_user':
         return (
           <div className="container-fluid">
-            this is message_user
+            <MessageUserPage changePage={this.props.changePage} />
           </div>
         );
         break;
       case 'message_system':
         return (
           <div className="container-fluid">
-            this is message_system
+            <MessageSystemPage changePage={this.props.changePage} />
           </div>
         );
         break;
+
       case 'account':
         return (
           <div className="container-fluid">
-            this is account
+            <AccountPage changePage={this.props.changePage} />
           </div>
         );
         break;
-      case 'manage_user':
+
+      case 'manage_users':
         return (
           <div className="container-fluid">
-            this is manage_user
+            <ManageUsersPage changePage={this.props.changePage} />
           </div>
         );
         break;
-      case 'manage_device':
+      case 'manage_devices_products':
         return (
           <div className="container-fluid">
-            this is manage_device
+            <ManageDevicesProductsPage changePage={this.props.changePage} />
+          </div>
+        );
+        break;
+      case 'manage_devices':
+        return (
+          <div className="container-fluid">
+            <ManageDevicesPage changePage={this.props.changePage} />
           </div>
         );
         break;
       case 'manage_system':
         return (
           <div className="container-fluid">
-            this is manage_system
+            unauthorized
           </div>
         );
         break;
+
       default:
         return (
           <div className="container-fluid">
