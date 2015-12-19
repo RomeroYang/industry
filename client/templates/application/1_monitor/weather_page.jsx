@@ -22,7 +22,7 @@ WeatherPage = React.createClass({
     return (
       <div className="container-fluid">
   		  <h3>WeatherPage</h3>
-        <p>deviceId: {this.props.deviceId}</p>
+        <p>deviceId: {this.props.currentDevice.id}</p>
         <p>weather: {this.data.weather}</p>
       </div>
     );
