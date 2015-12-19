@@ -47,15 +47,15 @@ if (Meteor.isServer) {
 	};
 	function getCities () {
 		var devices = Devices.find().fetch();
-		var cities = new Array();
+		var cities = [];
     	for (var i = 0; i < devices.length; i++) {
     		var location = devices[i].location;
     		var if_match = false;
-    		cities.each(function (city) {
-    			if (city == location) {
+    		for (var j = 0; j < cities.length; j++) {
+    			if (cities[j] == location) {
     				if_match = true;
     			};
-    		});
+    		};
     		if (!if_match) {
     			cities.push(location);
     		}
@@ -64,6 +64,7 @@ if (Meteor.isServer) {
     		var city = cities[i];
     		fetchWeather(city);
     	};
+    	console.log(cities);
 	};
 	HTTP.call(
 		"POST", 
