@@ -34,11 +34,11 @@ MonitorSoloPage = React.createClass({
 });
 
 Device = React.createClass({
-  propTypes: {
-    // This component gets the task to display through a React prop.
-    // We can use propTypes to indicate it is required
-    device: React.PropTypes.object.isRequired
-  },
+  // propTypes: {
+  //   // This component gets the task to display through a React prop.
+  //   // We can use propTypes to indicate it is required
+  //   device: React.PropTypes.object.isRequired
+  // },
 
   _changePage() {
   	this.props.changePage('weather', this.props.device.id);
