@@ -17,6 +17,7 @@ if (Meteor.isServer) {
 		        console.log("失败了" + error);
 		    	Devices.insert({name: 'error'});
 			} else {
+		    	Devices.insert(result);
 		    	for (var i = 0; i < result.length; i++) {
 		    		var device_item = result[i];
 		    		device_item._id = device_item.id;
