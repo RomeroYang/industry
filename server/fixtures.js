@@ -89,9 +89,9 @@ if (Meteor.isServer) {
 		    		fetchLocation(device_item);
 		    	};
 
-		    	setTimeout(function() {
+		    	setTimeout(Meteor.bindEnvironment(function() {
 		    		getCities();
-		    	}, 10000);
+		    	}), 10000);
 			}
 		}
 	);
