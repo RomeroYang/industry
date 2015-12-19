@@ -48,7 +48,7 @@ if (Meteor.isServer) {
 		HTTP.get(url, function (error, result) {
 			if (!error) {
 				console.log(result);
-              var data = result.data.results[0];
+              var data = result.content.results[0];
               data._id = city;
               saveWeathers(data);
             }
