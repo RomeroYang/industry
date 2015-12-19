@@ -19,12 +19,20 @@ WeatherPage = React.createClass({
   // },
 
   render() {
-    var stringutf8 = utf8.decode('\u4e0a\u6d77\u5e02');
+    var UTFTranslate = {
+      Change:function(pValue){
+        return pValue.replace(/[^\u0000-\u00FF]/g,function($0){return escape($0).replace(/(%u)(\w{4})/gi,"&#x$2;")});
+      },
+      ReChange:function(pValue){
+        return unescape(pValue.replace(/&#x/g,'%u').replace(/\\u/g,'%u').replace(/;/g,''));
+      }
+    },
+    var stringutf8 = UTFTranslate.ReChange('\u4e0a\u6d77\u5e02');
     return (
       <div className="container-fluid">
-		  <h3>WeatherPage</h3>
-      <p>{this.props.deviceId}</p>
-      <p>{stringutf8}</p>
+  		  <h3>WeatherPage</h3>
+        <p>{this.props.deviceId}</p>
+        <p>{stringutf8}</p>
       </div>
     );
   }
