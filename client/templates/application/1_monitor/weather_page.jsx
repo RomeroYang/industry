@@ -26,7 +26,7 @@ WeatherPage = React.createClass({
       ReChange:function(pValue){
         return unescape(pValue.replace(/&#x/g,'%u').replace(/\\u/g,'%u').replace(/;/g,''));
       }
-    },
+    };
     var stringutf8 = UTFTranslate.ReChange('\u4e0a\u6d77\u5e02');
     return (
       <div className="container-fluid">
