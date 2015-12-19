@@ -30,7 +30,13 @@ if (Meteor.isServer) {
 		HTTP.get(url, function (error, result) {
 			if (!error) {
               var data = result.data.content.address;
-              device.location = UTFTranslate.ReChange(data);
+              var city_name = UTFTranslate.ReChange(data);
+              if (city_name.match('省')) {
+              	city_name = city_name.split('省')[1];
+              } else if (city_name.match('自治区')) {
+              	city_name = city_name.split('自治区')[1];
+              }
+              device.location = city_name;
               saveDevices(device);
             }
 		});
@@ -39,7 +45,8 @@ if (Meteor.isServer) {
 		var url = 'http://api.map.baidu.com/telematics/v3/weather?location='+city+'&output=json&ak=g5QqWxi1rE04XFsvc288DF1P';
 		HTTP.get(url, function (error, result) {
 			if (!error) {
-              var data = result.data.data.results[0];
+				console.log(cities);
+              var data = result.data.results[0];
               data._id = city;
               saveWeathers(data);
             }
