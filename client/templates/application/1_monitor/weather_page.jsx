@@ -4,7 +4,7 @@ WeatherPage = React.createClass({
 
   // Loads items from the Devices collection and puts them on this.data.weather
   getMeteorData() {
-    let query = this.props.currentDevice._id;
+    let query = this.props.currentDevice.location;
 
     return {
       weather: Weathers.findOne(query)
