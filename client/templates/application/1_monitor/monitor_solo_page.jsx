@@ -50,22 +50,24 @@ Device = React.createClass({
 
     return (
       <li>
-        <div className={panelClassName}>
-    		  <div className="panel-heading">
-    		    <h3 className="panel-title">{this.props.device.id}</h3>
-    		  </div>
-    		  <div className="panel-body">
-    		    <table>
-              <tbody>
-    	          <tr className="row">
-    	            <td className="col-md-4">MAC: {this.props.device.bssid} </td>
-    	            <td className="col-md-4"> alias: {this.props.device.alias} </td>
-    	            <td className="col-md-4"> created: {this.props.device.created}</td>
-    	          </tr>
-              </tbody>
-    	       </table>
-    		  </div>
-    		</div>
+        <a href="javascript:;" onClick={this._changePage}>
+          <div className={panelClassName}>
+      		  <div className="panel-heading">
+      		    <h3 className="panel-title">{this.props.device.id}</h3>
+      		  </div>
+      		  <div className="panel-body">
+      		    <table>
+                <tbody>
+      	          <tr className="row">
+      	            <td className="col-md-4">MAC: {this.props.device.bssid} </td>
+      	            <td className="col-md-4"> alias: {this.props.device.alias} </td>
+      	            <td className="col-md-4"> created: {this.props.device.created}</td>
+      	          </tr>
+                </tbody>
+      	       </table>
+      		  </div>
+      		</div>
+        </a>
       </li>
     );
   }
