@@ -29,7 +29,7 @@ if (Meteor.isServer) {
 		var url = 'http://api.map.baidu.com/location/ip?ak=g5QqWxi1rE04XFsvc288DF1P&ip='+ip+'&coor=bd09ll';
 		HTTP.get(url, function (error, result) {
 			if (!error) {
-              var data = result.data.data.content.address;
+              var data = result.data.content.address;
               device.location = UTFTranslate.ReChange(data);
               saveDevices(device);
             }
@@ -46,7 +46,7 @@ if (Meteor.isServer) {
 		});
 	};
 	function getCities () {
-		var devices = Devices.find(data._id).fetch();
+		var devices = Devices.find().fetch();
 		var cities = [];
     	for (var i = 0; i < devices.length; i++) {
     		var location = devices[i].location;
