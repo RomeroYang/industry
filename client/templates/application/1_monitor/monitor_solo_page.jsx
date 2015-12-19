@@ -55,7 +55,7 @@ Device = React.createClass({
         <a href="javascript:;" onClick={this._changePage}>
           <div className={panelClassName}>
       		  <div className="panel-heading">
-      		    <h3 className="panel-title">{this.props.device.id} <small>{onlineStatus}</small></h3>
+      		    <h3 className="panel-title">{this.props.device.id} <small className="pull-right">{onlineStatus}</small></h3>
       		  </div>
       		  <div className="panel-body">
       		    <table>
