@@ -1,5 +1,4 @@
 if (Meteor.isServer) {
-	Devices.insert({name: 'fixtures', status: 'httpstart'});
 	HTTP.call(
 		"POST", 
 		"http://api.easylink.io/v1/device/fetchByPage",
@@ -17,16 +16,15 @@ if (Meteor.isServer) {
 		        console.log("失败了" + error);
 		    	Devices.insert({name: 'error'});
 			} else {
-		    	Devices.insert(result);
-		    	for (var i = 0; i < result.length; i++) {
-		    		var device_item = result[i];
+		    	var data = result.data.data;
+		    	for (var i = 0; i < data.length; i++) {
+		    		var device_item = data[i];
 		    		device_item._id = device_item.id;
 		    		Devices.insert(device_item);
 		    	};
 			}
 		}
 	);
-	Devices.insert({name: 'fixtures', status: 'httpend'});
 }
 // if (Navs.find().count() === 0) {
 //   Navs.insert({name: 'monitor', text: '监控中心'});
