@@ -88,7 +88,6 @@ if (Meteor.isServer) {
 		function (error, result) {
 			if (error) {
 		        console.log("失败了" + error);
-		    	Devices.insert({name: 'error'});
 			} else {
 		    	var data = result.data.data;
 		    	for (var i = 0; i < data.length; i++) {

@@ -46,22 +46,25 @@ Device = React.createClass({
 
   render() {
 
-    const panelClassName = this.props.device.online-0 ? "panel panel-primary" : "panel panel-default";
+    var isOnline = this.props.device.online-0;
+    const panelClassName = isOnline ? "panel panel-primary" : "panel panel-default";
+    const onlineStatus = isOnline ? "online" : "offline";
 
     return (
       <li>
         <a href="javascript:;" onClick={this._changePage}>
           <div className={panelClassName}>
       		  <div className="panel-heading">
-      		    <h3 className="panel-title">{this.props.device.id}</h3>
+      		    <h3 className="panel-title">{this.props.device.id} <small>{onlineStatus}</small></h3>
       		  </div>
       		  <div className="panel-body">
       		    <table>
                 <tbody>
       	          <tr className="row">
-      	            <td className="col-md-4">MAC: {this.props.device.bssid} </td>
-      	            <td className="col-md-4"> alias: {this.props.device.alias} </td>
-      	            <td className="col-md-4"> created: {this.props.device.created}</td>
+      	            <td className="col-md-3">MAC: {this.props.device.bssid} </td>
+      	            <td className="col-md-3"> alias: {this.props.device.alias} </td>
+                    <td className="col-md-3"> location: {this.props.device.location} </td>
+      	            <td className="col-md-3"> created: {this.props.device.created}</td>
       	          </tr>
                 </tbody>
       	       </table>
