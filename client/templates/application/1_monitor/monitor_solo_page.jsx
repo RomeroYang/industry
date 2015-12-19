@@ -56,12 +56,14 @@ Device = React.createClass({
 		  </div>
 		  <div className="panel-body">
 		    <table>
+          <tbody>
 	          <tr>
 	            <td>MAC: {this.props.device.MAC}</td>
 	            <td>alias: {this.props.device.alias}</td>
 	            <td>created: {this.props.device.created}</td>
 	          </tr>
-	        </table>
+          </tbody>
+	       </table>
 		  </div>
 		</div>
       </li>
