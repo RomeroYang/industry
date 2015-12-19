@@ -19,10 +19,12 @@ WeatherPage = React.createClass({
   // },
 
   render() {
+    var stringutf8 = utf8.decode('\u4e0a\u6d77\u5e02');
     return (
       <div className="container-fluid">
 		  <h3>WeatherPage</h3>
       <p>{this.props.deviceId}</p>
+      <p>{stringutf8}</p>
       </div>
     );
   }
