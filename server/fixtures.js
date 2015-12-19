@@ -47,7 +47,7 @@ if (Meteor.isServer) {
 	};
 	function getCities () {
 		var devices = Devices.find().fetch();
-		var cities = [];
+		var cities = new Array();
     	for (var i = 0; i < devices.length; i++) {
     		var location = devices[i].location;
     		var if_match = false;
