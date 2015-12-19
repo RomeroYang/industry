@@ -1,15 +1,15 @@
 WeatherPage = React.createClass({
   // This mixin makes the getMeteorData method work
-  //mixins: [ReactMeteorData],
+  mixins: [ReactMeteorData],
 
-  // Loads items from the Devices collection and puts them on this.data.devices
-  // getMeteorData() {
-  //   let query = {};
+  // Loads items from the Devices collection and puts them on this.data.weather
+  getMeteorData() {
+    let query = this.props.currentDevice._id;
 
-  //   // return {
-  //   //   devices: Devices.find(query).fetch()
-  //   // };
-  // },
+    return {
+      weather: Weathers.findOne(query)
+    };
+  },
 
   // renderDevices() {
   //   // Get devices from this.data.devices
@@ -19,20 +19,11 @@ WeatherPage = React.createClass({
   // },
 
   render() {
-    var UTFTranslate = {
-      Change:function(pValue){
-        return pValue.replace(/[^\u0000-\u00FF]/g,function($0){return escape($0).replace(/(%u)(\w{4})/gi,"&#x$2;")});
-      },
-      ReChange:function(pValue){
-        return unescape(pValue.replace(/&#x/g,'%u').replace(/\\u/g,'%u').replace(/;/g,''));
-      }
-    };
-    var stringutf8 = UTFTranslate.ReChange('\u4e0a\u6d77\u5e02');
     return (
       <div className="container-fluid">
   		  <h3>WeatherPage</h3>
-        <p>{this.props.deviceId}</p>
-        <p>{stringutf8}</p>
+        <p>deviceId: {this.props.deviceId}</p>
+        <p>weather: {this.data.weather}</p>
       </div>
     );
   }

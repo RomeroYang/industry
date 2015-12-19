@@ -1,4 +1,70 @@
 if (Meteor.isServer) {
+	function saveDevices (data) {
+		var db_data = Devices.find(data._id).fetch();
+		if (db_data.length) {
+			Devices.update(data._id, data);
+		} else {
+			Devices.insert(data);
+		}
+	};
+	function saveWeathers (data) {
+		var db_data = Weathers.find(data._id).fetch();
+		if (db_data.length) {
+			Weathers.update(data._id, data);
+		} else {
+			Weathers.insert(data);
+		}
+	};
+	function fetchLocation (device_item) {
+	    var UTFTranslate = {
+	      Change:function(pValue){
+	        return pValue.replace(/[^\u0000-\u00FF]/g,function($0){return escape($0).replace(/(%u)(\w{4})/gi,"&#x$2;")});
+	      },
+	      ReChange:function(pValue){
+	        return unescape(pValue.replace(/&#x/g,'%u').replace(/\\u/g,'%u').replace(/;/g,''));
+	      }
+	    };
+	    var device = device_item;
+	    var ip = device.ip.split(':')[0];
+		var url = 'http://api.map.baidu.com/location/ip?ak=g5QqWxi1rE04XFsvc288DF1P&ip='+ip+'&coor=bd09ll';
+		HTTP.get(url, function (error, result) {
+			if (!error) {
+              var data = result.data.data.content.address;
+              device.location = UTFTranslate.ReChange(data);
+              saveDevices(device);
+            }
+		});
+	};
+	function fetchWeather (city) {
+		var url = 'http://api.map.baidu.com/telematics/v3/weather?location='+city+'&output=json&ak=g5QqWxi1rE04XFsvc288DF1P';
+		HTTP.get(url, function (error, result) {
+			if (!error) {
+              var data = result.data.data.results[0];
+              data._id = city;
+              saveWeathers(data);
+            }
+		});
+	};
+	function getCities () {
+		var devices = Devices.find(data._id).fetch();
+		var cities = [];
+    	for (var i = 0; i < devices.length; i++) {
+    		var location = devices[i].location;
+    		var if_match = false;
+    		cities.each(function (city) {
+    			if (city == location) {
+    				if_match = true;
+    			};
+    		});
+    		if (!if_match) {
+    			cities.push(location);
+    		}
+    	};
+    	for (var i = 0; i < cities.length; i++) {
+    		var city = cities[i];
+    		fetchWeather(city);
+    	};
+	};
 	HTTP.call(
 		"POST", 
 		"http://api.easylink.io/v1/device/fetchByPage",
@@ -20,8 +86,12 @@ if (Meteor.isServer) {
 		    	for (var i = 0; i < data.length; i++) {
 		    		var device_item = data[i];
 		    		device_item._id = device_item.id;
-		    		Devices.insert(device_item);
+		    		fetchLocation(device_item);
 		    	};
+
+		    	setTimeout(function() {
+		    		getCities();
+		    	}, 10000);
 			}
 		}
 	);

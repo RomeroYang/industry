@@ -7,10 +7,10 @@ App = React.createClass({
     }
   },
 
-  _changePage(name, deviceId) {
+  _changePage(name, currentDevice) {
     this.setState({
       currentPage: name,
-      deviceId: deviceId
+      currentDevice: currentDevice
     });
   },
 
@@ -29,7 +29,7 @@ App = React.createClass({
             </div>
 
             <div id="main" className="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-              <Content deviceId={this.state.deviceId} currentPage={this.state.currentPage} changePage={this._changePage} />
+              <Content currentDevice={this.state.currentDevice} currentPage={this.state.currentPage} changePage={this._changePage} />
             </div>
           </div>
         </div>
