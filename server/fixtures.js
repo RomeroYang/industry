@@ -8,7 +8,9 @@ if (Meteor.isServer) {
 		}
 	};
 	function saveWeathers (data) {
+		console.log(data);
 		var db_data = Weathers.find(data._id).fetch();
+		console.log(db_data);
 		if (db_data.length) {
 			Weathers.update(data._id, data);
 		} else {
@@ -45,7 +47,7 @@ if (Meteor.isServer) {
 		var url = 'http://api.map.baidu.com/telematics/v3/weather?location='+city+'&output=json&ak=g5QqWxi1rE04XFsvc288DF1P';
 		HTTP.get(url, function (error, result) {
 			if (!error) {
-				console.log(cities);
+				console.log(result);
               var data = result.data.results[0];
               data._id = city;
               saveWeathers(data);
@@ -71,7 +73,7 @@ if (Meteor.isServer) {
     		var city = cities[i];
     		fetchWeather(city);
     	};
-    	console.log(cities);
+    	//console.log(cities);
 	};
 	HTTP.call(
 		"POST", 
