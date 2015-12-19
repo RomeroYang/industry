@@ -1,22 +1,22 @@
 WeatherPage = React.createClass({
   // This mixin makes the getMeteorData method work
-  mixins: [ReactMeteorData],
+  //mixins: [ReactMeteorData],
 
   // Loads items from the Devices collection and puts them on this.data.devices
-  getMeteorData() {
-    let query = {};
+  // getMeteorData() {
+  //   let query = {};
 
-    // return {
-    //   devices: Devices.find(query).fetch()
-    // };
-  },
+  //   // return {
+  //   //   devices: Devices.find(query).fetch()
+  //   // };
+  // },
 
-  renderDevices() {
-    // Get devices from this.data.devices
-    // return this.data.devices.map((device) => {
-    //   return <Device changePage={this.props.changePage} key={device._id} device={device} />;
-    // });
-  },
+  // renderDevices() {
+  //   // Get devices from this.data.devices
+  //   // return this.data.devices.map((device) => {
+  //   //   return <Device changePage={this.props.changePage} key={device._id} device={device} />;
+  //   // });
+  // },
 
   render() {
     return (
