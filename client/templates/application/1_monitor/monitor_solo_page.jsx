@@ -109,14 +109,14 @@ MonitorSoloPage = React.createClass({
     var history_msg = JSON.parse(history_msg_str);
 
     var current_chart = 'temperature';
-    this._chartInterval = setInterval(function() {
+    setInterval(function() {
       this._showChart(current_chart);
     }, 3000);
   },
 
   componentWillUnmount() {
     this.mqttClient.disconnect();
-    this._chartInterval.clearInterval();
+    clearInterval();
   },
 
   render() {
