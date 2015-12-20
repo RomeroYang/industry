@@ -17,6 +17,18 @@ WeatherPageDaily = React.createClass({
 				<DailyDetail key={dat.date} date={dat.date} temp={dat.temperature} weat={dat.weather} mon={mon} day={day} />
 			);
 		});
+
+		var pm25_state = '';
+		var pm25 = this.props.pm25-0;
+		if (pm25 < 50) {
+			pm25_state = {color: '#24B6FF', text: '空气优良'};
+		} else if (pm25 > 49 && pm25 < 100) {
+			pm25_state = {color: '#37CB8F', text: '空气良好'};
+		} else if (pm25 > 99 && pm25 < 200) {
+			pm25_state = {color: '#FE895E', text: '轻度污染'};
+		} else if (pm25 > 199) {
+			pm25_state = {color: '#DD591F', text: '重度污染'};
+		}
 	    return (
 	      <div className={"container-fluid" + " " + "pagedaily" + bgp}>
 			    <div className="row rowdaily">
@@ -25,7 +37,7 @@ WeatherPageDaily = React.createClass({
 						<h4>{this.props.weather.weather_data[0].temperature}</h4>
 			      		<h4>{this.props.weather.weather_data[0].weather}</h4>
 			      		<h4>{this.props.weather.weather_data[0].wind}</h4>
-			      		<h4 className="pm25">{"PM2.5:" + this.props.weather.pm25}</h4>
+			      		<h4 style={{backgroundColor:pm25_state.color}} className="pm25">{this.props.weather.pm25+' : '+pm25_state.text}</h4>
 					</div>
 					{displaydaily}
 			    </div>
@@ -45,7 +57,7 @@ DailyDetail = React.createClass({
       <div className="col-md-2">
       	<h3>{this.props.date.slice(0,3)}</h3>
       	<h5>{this.props.mon+"月"+this.props.day+"日"}</h5>
-      	<div className="weatherpic">
+      	<div>
       		<img className="weatherpic" src={weatherpic} />
       	</div>
       	<h5>{this.props.temp}</h5>
