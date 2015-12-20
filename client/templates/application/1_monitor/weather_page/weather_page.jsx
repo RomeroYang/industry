@@ -86,6 +86,9 @@ WeatherPage = React.createClass({
             categories: []
         },
         yAxis: {
+            title: {
+              text: null
+            },
             plotLines: [{
                 value: 0,
                 width: 1,
