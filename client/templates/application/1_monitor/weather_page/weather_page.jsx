@@ -10,12 +10,25 @@ WeatherPage = React.createClass({
       weather: Weathers.findOne(query)
     };
   },
+
+  getInitialState() {
+    return {
+      currentNav: 'temperature'
+    }
+  },
+
+  _changeNav(currentNav) {
+    this.setState({
+      currentNav: currentNav
+    });
+  },
+
   render() {
   	
     return (
     	<div>
     		<WeatherHeader currentDevice = {this.props.currentDevice} weather = {this.data.weather} />
-        <WeatherButton />
+        <WeatherNav changNav={this._changeNav} currentNav={this.state.currentNav} />
     		<WeatherDaily weather = {this.data.weather} />
     	</div>
     );
