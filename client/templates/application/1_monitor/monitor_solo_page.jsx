@@ -18,6 +18,33 @@ MonitorSoloPage = React.createClass({
     });
   },
 
+  _mqttClient() {
+    var host = "api.easylink.io";
+    var port = 1983;
+    var clientID = "v1-app-" + parseInt(Math.random() * (1000000000000), 12);
+    var client = new Paho.MQTT.Client(host, Number(port), clientID);
+    client.onMessageArrived = onMessageArrived;
+    function onMessageArrived(message) {
+        console.log("onMessageArrived:"+message.payloadString);
+    };
+    this.mqttClient = client;
+  },
+
+  componentDidMount() {
+    this._mqttClient();
+    this.mqttClient.connect({onSuccess:onConnect});
+    function onConnect() {
+        // Once a connection has been made, make a subscription and send a message.
+        console.log("onConnect");
+        var device_id = '60b3105c/d0bae40090fb';
+        client.subscribe(device_id + "/out");   //订阅消息
+    };
+  },
+
+  componentWillUnmount() {
+    this.mqttClient.disconnect();
+  },
+
   render() {
     return (
       <div className="container-fluid">
