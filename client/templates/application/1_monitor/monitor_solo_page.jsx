@@ -38,7 +38,7 @@ MonitorSoloPage = React.createClass({
   _onMessageArrived(message) {
     //console.log("onMessageArrived:"+message.payloadString);
     var msg = JSON.parse(message.payloadString);
-    if (this.state.currentMessage != msg) {
+    if (this.state.currentMessage !== msg) {
       var data_array_str = localStorage.getItem('60b3105c/d0bae40090fb');
       if (data_array_str) {
         var data_array = JSON.parse(data_array_str);
