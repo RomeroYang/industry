@@ -52,7 +52,7 @@ DailyDetail = React.createClass({
   		if(this.props.weat.match(WeatherCondition[x])!=null)
   			{weatherpic = WeatherCondition[x];break;}
   	}
-  	weatherpic = "/img/weather/weather_min_" + weatherpic + ".png";
+  	weatherpic = "/img/weather/weather_mini_" + weatherpic + ".png";
     return (
       <div className="col-md-2">
       	<h3>{this.props.date.slice(0,3)}</h3>
