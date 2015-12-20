@@ -11,6 +11,13 @@ MonitorSoloPage = React.createClass({
     };
   },
 
+  getInitialState() {
+    return {
+      currentMessage: {},
+      historyMessages: []
+    }
+  },
+
   renderDevices() {
     // Get devices from this.data.devices
     return this.data.devices.map((device) => {
@@ -23,11 +30,32 @@ MonitorSoloPage = React.createClass({
     var port = 1983;
     var clientID = "v1-app-" + parseInt(Math.random() * (1000000000000), 12);
     var client = new Paho.MQTT.Client(host, Number(port), clientID);
-    client.onMessageArrived = onMessageArrived;
-    function onMessageArrived(message) {
-        console.log("onMessageArrived:"+message.payloadString);
-    };
+    client.onMessageArrived = this._onMessageArrived;
+    
     this.mqttClient = client;
+  },
+
+  _onMessageArrived(message) {
+    //console.log("onMessageArrived:"+message.payloadString);
+    var msg = JSON.parse(message.payloadString);
+    if (this.state.currentMessage != msg) {
+      var data_array_str = localStorage.getItem('60b3105c/d0bae40090fb');
+      if (data_array_str) {
+        var data_array = JSON.parse(data_array_str);
+      } else {
+        var data_array = [];
+      }
+      if (data_array.length > 24) {
+        data_array.shift();
+      }
+      data_array.push(msg);
+      localStorage.setItem('60b3105c/d0bae40090fb', JSON.stringify(data_array));
+
+      this.setState({
+        currentMessage: msg,
+        historyMessages: data_array
+      });
+    }
   },
 
   componentDidMount() {
@@ -55,6 +83,9 @@ MonitorSoloPage = React.createClass({
 		    <ul className="list-unstyled">
 		    	{this.renderDevices()}
 		    </ul>
+        <div>
+          {JSON.stringify(this.state.historyMessages)}
+        </div>
 		  </div>
       </div>
     );
