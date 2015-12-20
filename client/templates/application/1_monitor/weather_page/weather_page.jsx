@@ -108,6 +108,7 @@ WeatherPage = React.createClass({
     function onConnect() {
         // Once a connection has been made, make a subscription and send a message.
         console.log("connected");
+        console.log(this.props.currentDevice.id);
         client.subscribe(this.props.currentDevice.id + "/out");   //订阅消息
     };
 
@@ -121,8 +122,12 @@ WeatherPage = React.createClass({
   },
 
   componentWillUnmount() {
-    this.mqttClient.disconnect();
-    console.log('disconnected');
+    try {
+      this.mqttClient.disconnect();
+      console.log('disconnected');
+    } catch(e) {
+      console.log(e);
+    }
     clearInterval(this.timer);
   },
 
