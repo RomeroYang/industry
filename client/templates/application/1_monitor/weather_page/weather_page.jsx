@@ -92,12 +92,9 @@ WeatherPage = React.createClass({
                 color: '#808080'
             }]
         },
-        // legend: {
-        //     layout: 'vertical',
-        //     align: 'right',
-        //     verticalAlign: 'middle',
-        //     borderWidth: 0
-        // },
+        legend: {
+            enabled: false
+        },
         series: [{
             name: '',
             data: chart_data
@@ -141,7 +138,7 @@ WeatherPage = React.createClass({
     	<div>
     		<WeatherPageHeader currentDevice = {this.props.currentDevice} weather = {this.data.weather} />
         <WeatherPageNav changeNav={this._changeNav} activeNav={this.state.activeNav} />
-    		<WeatherDaily weather = {this.data.weather} />
+    		<WeatherPageDaily weather = {this.data.weather} />
         <div ref="chart" style={{height: '200px'}}></div>
     	</div>
     );
