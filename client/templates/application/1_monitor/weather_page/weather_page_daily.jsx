@@ -18,7 +18,7 @@ WeatherPageDaily = React.createClass({
 			);
 		});
 
-		var pm25_state = '';
+		var pm25_state = {};
 		var pm25 = this.props.pm25-0;
 		if (pm25 < 50) {
 			pm25_state = {color: '#24B6FF', text: '空气优良'};
