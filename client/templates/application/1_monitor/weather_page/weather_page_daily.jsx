@@ -37,7 +37,7 @@ DailyDetail = React.createClass({
   render() {
   	var weatherpic;
   	for (var x in WeatherCondition){
-  		if(this.props.dat.weat.match(WeatherCondition[x])!=null)
+  		if(this.props.dat.weather.match(WeatherCondition[x])!=null)
   			{weatherpic = WeatherCondition[x];break;}
   	}
   	weatherpic = "/img/weather/weather_min_" + weatherpic + ".png";
@@ -46,8 +46,8 @@ DailyDetail = React.createClass({
       	<h3>{this.props.dat.date.slice(0,3)}</h3>
       	<h5>{this.props.dat.mon+"月"+this.props.dat.day+"日"}</h5>
       	<img className="weatherpic" src={weatherpic} />
-      	<h5>{this.props.dat.temp}</h5>
-      	<h5>{this.props.dat.weat}</h5>
+      	<h5>{this.props.dat.temperature}</h5>
+      	<h5>{this.props.dat.weather}</h5>
       </div>
     );
   }
