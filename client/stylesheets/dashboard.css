@@ -187,67 +187,67 @@ ul.nav-justified {
 .pagedaily0{
   background-image: url(/img/weather/weather_bg_暴雨.png);
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:100%;
 }
 .pagedaily1{
   background-image: url(/img/weather/weather_bg_大雪.png);
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:100%;
 }
 .pagedaily2{
   background-image: url(/img/weather/weather_bg_大雨.png);
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:100%;
 }
 .pagedaily3{
   background-image: url(/img/weather/weather_bg_多云.png);
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:100%;
 }
 .pagedaily4{
   background-image: url(/img/weather/weather_bg_晴.png);
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:100%;
 }
 .pagedaily5{
   background-image: url(/img/weather/weather_bg_沙尘.png);
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:100%;
 }
 .pagedaily6{
   background-image: url(/img/weather/weather_bg_未知.png);
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:100%;
 }
 .pagedaily7{
   background-image: url(/img/weather/weather_bg_雾.png);
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:100%;
 }
 .pagedaily8{
   background-image: url(/img/weather/weather_bg_小雪.png);
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:100%;
 }
 .pagedaily9{
   background-image: url(/img/weather/weather_bg_小雨.png);
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:100%;
 }
 .pagedaily10{
   background-image: url(/img/weather/weather_bg_阴.png);
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:100%;
 }
 .pagedaily11{
   background-image: url(/img/weather/weather_bg_中雪.png);
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:100%;
 }
 .pagedaily12{
   background-image: url(/img/weather/weather_bg_中雨.png);
   background-repeat:no-repeat;
-  background-size:contain;
+  background-size:100%;
 }
 
 .rowdaily {

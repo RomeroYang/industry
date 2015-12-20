@@ -23,6 +23,10 @@ WeatherPage = React.createClass({
     this.setState({
       activeNav: activeNav
     });
+    clearInterval(this.timer);
+    this.timer = setInterval(function() {
+      this._showChart(activeNav);
+    }.bind(this), 3000);
   },
 
   _mqttClient() {
