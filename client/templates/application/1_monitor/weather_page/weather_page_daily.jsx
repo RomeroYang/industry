@@ -14,7 +14,7 @@ WeatherPageDaily = React.createClass({
 		}
 		var displaydaily =  data.map(function (dat) {
 			return (
-				<DailyDetail key={dat.date} dat={dat} />
+				<DailyDetail key={dat.date} date={dat.date} temp={dat.temperature} weat={dat.weather} mon={mon} day={day} />
 			);
 		});
 	    return (
@@ -37,17 +37,17 @@ DailyDetail = React.createClass({
   render() {
   	var weatherpic;
   	for (var x in WeatherCondition){
-  		if(this.props.dat.weather.match(WeatherCondition[x])!=null)
+  		if(this.props.weat.match(WeatherCondition[x])!=null)
   			{weatherpic = WeatherCondition[x];break;}
   	}
   	weatherpic = "/img/weather/weather_min_" + weatherpic + ".png";
     return (
-      <div className="col-md-2 weathertext">
-      	<h3>{this.props.dat.date.slice(0,3)}</h3>
-      	<h5>{this.props.dat.mon+"月"+this.props.dat.day+"日"}</h5>
+      <div className="col-md-2">
+      	<h3>{this.props.date.slice(0,3)}</h3>
+      	<h5>{this.props.mon+"月"+this.props.day+"日"}</h5>
       	<img className="weatherpic" src={weatherpic} />
-      	<h5>{this.props.dat.temperature}</h5>
-      	<h5>{this.props.dat.weather}</h5>
+      	<h5>{this.props.temp}</h5>
+      	<h5>{this.props.weat}</h5>
       </div>
     );
   }

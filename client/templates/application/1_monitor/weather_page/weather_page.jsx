@@ -139,7 +139,7 @@ WeatherPage = React.createClass({
     		<WeatherPageHeader currentDevice = {this.props.currentDevice} weather = {this.data.weather} />
         <WeatherPageNav changeNav={this._changeNav} activeNav={this.state.activeNav} />
     		<WeatherPageDaily weather = {this.data.weather} />
-        <div style={{backgroundColor:"#f5f5f5",paddingTop:"16px"}} ref="chart" style={{height: '200px'}}></div>
+        <div ref="chart" style={{height:'200px',backgroundColor:"#f5f5f5",paddingTop:"16px"}}></div>
     	</div>
     );
   }
