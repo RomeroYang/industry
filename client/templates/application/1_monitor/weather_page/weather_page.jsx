@@ -104,13 +104,12 @@ WeatherPage = React.createClass({
   componentDidMount() {
     this._mqttClient();
     var client = this.mqttClient;
+    var device_id = this.props.currentDevice.id;
     client.connect({onSuccess:onConnect});
     function onConnect() {
         // Once a connection has been made, make a subscription and send a message.
         console.log("connected");
-        console.log(this.props.currentDevice.id);
-        client.subscribe(this.props.currentDevice.id + "/out");
-        console.log("subscribed");
+        client.subscribe(device_id + "/out");
     };
 
     var history_msg_str = localStorage.getItem(this.props.currentDevice.id);
