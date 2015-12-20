@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1919.984px" height="649.719px" viewBox="0 0 1919.984 649.719" enable-background="new 0 0 1919.984 649.719"
+	 xml:space="preserve">
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="960.0156" y1="1105.8849" x2="960.0156" y2="163.8657">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#009FF0"/>
+	</linearGradient>
+	<rect x="0.016" y="-100" fill="url(#SVGID_1_)" width="1920" height="749.604"/>
+	<rect x="1606.432" y="-0.116" opacity="0" fill="#C7E8F9" width="313.553" height="649.834"/>
+	<rect x="1292.104" y="-0.116" opacity="0" fill="#C7E8F9" width="313.553" height="649.834"/>
+	<rect x="978.549" y="-0.116" opacity="0" fill="#C7E8F9" width="313.553" height="649.834"/>
+	<rect x="664.998" y="-0.116" opacity="0" fill="#C7E8F9" width="313.552" height="649.834"/>
+	<g opacity="0.3">
+		<polygon opacity="0.4" fill="#F7F7F7" points="210.313,154.794 142.276,191.987 76.048,151.662 77.857,74.144 145.893,36.952 
+			212.122,77.277 		"/>
+		<polygon opacity="0.4" fill="#F7F7F7" points="257.164,183.622 219.632,204.138 183.097,181.894 184.094,139.129 221.627,118.611 
+			258.164,140.858 		"/>
+		<polygon opacity="0.4" fill="#F7F7F7" points="365.629,223.349 351.658,230.986 338.059,222.706 338.43,206.786 352.402,199.149 
+			366.001,207.43 		"/>
+		<polygon opacity="0.4" fill="#F7F7F7" points="428.459,255.446 405.421,268.04 382.995,254.386 383.607,228.136 406.646,215.542 
+			429.072,229.198 		"/>
+		<polygon opacity="0.4" fill="#F7F7F7" points="575.198,331.034 521.698,360.279 469.623,328.571 471.046,267.617 524.543,238.372 
+			576.619,270.082 		"/>
+		<polygon opacity="0.4" fill="#F7F7F7" points="742.3,408.906 641.03,464.265 542.454,404.243 545.146,288.859 646.416,233.5 
+			744.991,293.526 		"/>
+		<polygon opacity="0.1" fill="#F7F7F7" points="760.897,420.229 640.522,486.031 523.35,414.687 526.549,277.536 646.924,211.733 
+			764.095,283.083 		"/>
+		<polygon opacity="0.1" fill="#F7F7F7" points="225.219,163.871 141.869,209.435 60.735,160.033 62.95,65.067 146.301,19.504 
+			227.436,68.906 		"/>
+	</g>
+	<g opacity="0.2">
+		<polygon opacity="0.4" fill="#F7F7F7" points="1272.984,289.242 1259.014,296.879 1245.414,288.599 1245.785,272.679 
+			1259.756,265.042 1273.355,273.323 		"/>
+		<polygon opacity="0.4" fill="#F7F7F7" points="1335.814,321.339 1312.775,333.933 1290.35,320.279 1290.963,294.029 1314,281.435 
+			1336.426,295.091 		"/>
+		<polygon opacity="0.4" fill="#F7F7F7" points="1482.553,396.927 1429.053,426.172 1376.979,394.464 1378.4,333.51 
+			1431.898,304.265 1483.973,335.975 		"/>
+		<polygon opacity="0.2" fill="#F7F7F7" points="1649.654,474.798 1548.385,530.158 1449.809,470.136 1452.5,354.752 
+			1553.771,299.393 1652.346,359.419 		"/>
+	</g>
+	<g>
+		<circle opacity="0.1" fill="#FFDA00" cx="319.208" cy="158.489" r="140"/>
+		<circle opacity="0.3" fill="#FFDA00" cx="319.208" cy="158.489" r="121.274"/>
+		<circle opacity="0.5" fill="#FFDA00" cx="319.208" cy="158.489" r="101.656"/>
+		<circle fill="#FFDA00" cx="319.208" cy="158.489" r="78.471"/>
+	</g>
+</g>
+<g>
+	<g>
+		<defs>
+			<rect id="SVGID_78_" x="0.008" y="-869.805" width="1920" height="749.606"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_78_"  overflow="visible"/>
+		</clipPath>
+		<g opacity="0.2" clip-path="url(#SVGID_2_)">
+			
+				<image overflow="visible" width="2950" height="2261" xlink:href="5B7E7AE1.png"  transform="matrix(0.24 0 0 0.24 169.1777 -360.2839)">
+			</image>
+		</g>
+	</g>
+</g>
+</svg>
