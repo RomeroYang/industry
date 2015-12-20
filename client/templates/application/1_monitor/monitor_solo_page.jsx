@@ -60,7 +60,18 @@ MonitorSoloPage = React.createClass({
     }
   },
 
-  _showChart() {
+  _getChartData(current_chart) {
+    var history_msg = this.state.historyMessages;
+    var chart_data = [];
+    for (var i = 0; i < history_msg.length; i++) {
+      var data_item = history_msg[i][current_chart];
+      chart_data.push(data_item);
+    };
+    return chart_data;
+  },
+
+  _showChart(current_chart) {
+    var chart_data = this._getChartData(current_chart);
     var chart_container = this.refs.chart;
     $(chart_container).highcharts({
         yAxis: {
@@ -78,7 +89,7 @@ MonitorSoloPage = React.createClass({
         // },
         series: [{
             name: 'Tokyo',
-            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+            data: chart_data
         }]
     });
   },
@@ -97,15 +108,15 @@ MonitorSoloPage = React.createClass({
     var history_msg_str = localStorage.getItem('60b3105c/d0bae40090fb');
     var history_msg = JSON.parse(history_msg_str);
 
-    this._showChart();
-
-    // this._chartInterval = setInterval(function() {
-    //   //
-    // }, 3000);
+    var current_chart = 'temperature';
+    this._chartInterval = setInterval(function() {
+      this._showChart(current_chart);
+    }, 3000);
   },
 
   componentWillUnmount() {
     this.mqttClient.disconnect();
+    this._chartInterval.clearInterval();
   },
 
   render() {
