@@ -10,7 +10,7 @@ WeatherPageNav = React.createClass({
 			{name: 'sound', text: '噪声'}
 		];
 	    return navs.map((nav) => {
-	      return <NavItem changeNav={this.props.changeNav} activeNav={this.props.currentNav} key={nav.name} nav={nav} />;
+	      return <NavItem changeNav={this.props.changeNav} activeNav={this.props.activeNav} key={nav.name} nav={nav} />;
 	    });
 	},
 
@@ -30,8 +30,8 @@ NavItem = React.createClass({
 	},
 
   	render() {
-  		var isActive = this.props.currentNav == this.props.nav.name ? true:false;
-  		console.log(this.props.currentNav);
+  		var isActive = this.props.activeNav == this.props.nav.name ? true:false;
+  		console.log(this.props.activeNav);
   		console.log(this.props.nav.name);
   		var activeClass = isActive ? 'active':'';
   		var activeImg = isActive ? '_p.png':'_n.png';

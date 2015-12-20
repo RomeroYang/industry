@@ -13,13 +13,13 @@ WeatherPage = React.createClass({
 
   getInitialState() {
     return {
-      currentNav: 'temperature'
+      activeNav: 'temperature'
     }
   },
 
-  _changeNav(currentNav) {
+  _changeNav(activeNav) {
     this.setState({
-      currentNav: currentNav
+      activeNav: activeNav
     });
   },
 
@@ -28,7 +28,7 @@ WeatherPage = React.createClass({
     return (
     	<div>
     		<WeatherPageHeader currentDevice = {this.props.currentDevice} weather = {this.data.weather} />
-        <WeatherPageNav changNav={this._changeNav} currentNav={this.state.currentNav} />
+        <WeatherPageNav changNav={this._changeNav} activeNav={this.state.activeNav} />
     		<WeatherDaily weather = {this.data.weather} />
     	</div>
     );
