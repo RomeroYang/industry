@@ -221,6 +221,15 @@ a:hover {
   background-size:contain;
 }
 
+ul.nav-justified {
+  background-color: #f5f5f5;
+}
+.nav-justified > li > a, 
+.nav-justified > li > a:hover {
+  color: #666;
+  background-color: transparent;
+}
+
 .rowdaily {
   text-align: center;
   width: 100%;
