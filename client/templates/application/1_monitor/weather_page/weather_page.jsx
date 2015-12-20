@@ -82,6 +82,7 @@ WeatherPage = React.createClass({
             backgroundColor: '#f5f5f5',
             type: 'line'
         },
+        colors: ['#fe895e']
         title: {
             text: '',
             x: -20 //center
