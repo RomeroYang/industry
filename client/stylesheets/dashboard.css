@@ -125,3 +125,115 @@ a:hover {
   display: inline-block;
   border-radius: 50%;
 }
+
+
+/*
+ * weather page
+ */
+.pageheader {
+  background-color: #C8E6C9;
+}
+.online-circle {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #8BC34A;
+  border-radius: 8px;
+}
+
+.offline-circle {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #F44336;
+  border-radius: 8px;
+}
+.isonline {
+  display: inline-block;
+}
+
+.pagedaily0{
+  background-image: url(/img/weather/weather_bg_暴雨.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.pagedaily1{
+  background-image: url(/img/weather/weather_bg_大雪.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.pagedaily2{
+  background-image: url(/img/weather/weather_bg_大雨.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.pagedaily3{
+  background-image: url(/img/weather/weather_bg_多云.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.pagedaily4{
+  background-image: url(/img/weather/weather_bg_晴.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.pagedaily5{
+  background-image: url(/img/weather/weather_bg_沙尘.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.pagedaily6{
+  background-image: url(/img/weather/weather_bg_未知.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.pagedaily7{
+  background-image: url(/img/weather/weather_bg_雾.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.pagedaily8{
+  background-image: url(/img/weather/weather_bg_小雪.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.pagedaily9{
+  background-image: url(/img/weather/weather_bg_小雨.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.pagedaily10{
+  background-image: url(/img/weather/weather_bg_阴.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.pagedaily11{
+  background-image: url(/img/weather/weather_bg_中雪.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.pagedaily12{
+  background-image: url(/img/weather/weather_bg_中雨.png);
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+
+.rowdaily {
+  text-align: center;
+  width: 100%;
+  height: 400px;
+}
+.weatherpic {
+  width: 60%;
+  height: 60%;
+}
+.weathertext {
+  color: #FFFFFF;
+}
+.pm25 {
+  
+  text-align: center;
+  vertical-align: middle;
+  background-color: #9E9E9E;
+  height: 32px;
+}
