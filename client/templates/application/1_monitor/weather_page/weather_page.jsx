@@ -78,6 +78,10 @@ WeatherPage = React.createClass({
     var chart_data = this._getChartData(current_chart);
     var chart_container = this.refs.chart;
     $(chart_container).highcharts({
+        chart: {
+            backgroundColor: '#f5f5f5',
+            type: 'line'
+        },
         title: {
             text: '',
             x: -20 //center

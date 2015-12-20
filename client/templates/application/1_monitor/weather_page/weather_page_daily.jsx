@@ -45,7 +45,9 @@ DailyDetail = React.createClass({
       <div className="col-md-2">
       	<h3>{this.props.date.slice(0,3)}</h3>
       	<h5>{this.props.mon+"月"+this.props.day+"日"}</h5>
-      	<img className="weatherpic" src={weatherpic} />
+      	<div className="weatherpic">
+      		<img className="weatherpic" src={weatherpic} />
+      	</div>
       	<h5>{this.props.temp}</h5>
       	<h5>{this.props.weat}</h5>
       </div>
