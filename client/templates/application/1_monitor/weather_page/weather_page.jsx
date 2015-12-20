@@ -28,7 +28,7 @@ WeatherPage = React.createClass({
     return (
     	<div>
     		<WeatherPageHeader currentDevice = {this.props.currentDevice} weather = {this.data.weather} />
-        <WeatherNav changNav={this._changeNav} currentNav={this.state.currentNav} />
+        <WeatherPageNav changNav={this._changeNav} currentNav={this.state.currentNav} />
     		<WeatherDaily weather = {this.data.weather} />
     	</div>
     );

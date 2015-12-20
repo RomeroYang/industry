@@ -1,4 +1,4 @@
-WeatherNav = React.createClass({
+WeatherPageNav = React.createClass({
 
 	_renderNavs() {
 		var navs = [
