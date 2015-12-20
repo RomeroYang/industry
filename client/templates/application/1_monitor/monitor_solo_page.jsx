@@ -33,11 +33,13 @@ MonitorSoloPage = React.createClass({
   componentDidMount() {
     this._mqttClient();
     this.mqttClient.connect({onSuccess:onConnect});
+
+    var device_id = '60b3105c/d0bae40090fb';
+    this.mqttClient.subscribe(device_id + "/out");
+    
     function onConnect() {
         // Once a connection has been made, make a subscription and send a message.
         console.log("onConnect");
-        var device_id = '60b3105c/d0bae40090fb';
-        this.mqttClient.subscribe(device_id + "/out");   //订阅消息
     };
   },
 
