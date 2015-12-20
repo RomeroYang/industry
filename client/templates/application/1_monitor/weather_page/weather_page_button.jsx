@@ -16,7 +16,7 @@ WeatherNav = React.createClass({
 
   	render() {
 	    return (
-			<ul className="nav nav-pills">
+			<ul className="nav nav-pills nav-justified">
 				{this._renderNavs()}
 			</ul>
 	    );
