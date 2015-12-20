@@ -169,7 +169,7 @@ Device = React.createClass({
       		  <div className="panel-body">
       		    <table>
                 <tbody>
-      	          <tr className="row">
+      	          <tr className="row" >
       	            <td className="col-md-3">MAC: {this.props.device.bssid} </td>
       	            <td className="col-md-3"> alias: {this.props.device.alias} </td>
                     <td className="col-md-3"> location: {this.props.device.location} </td>
