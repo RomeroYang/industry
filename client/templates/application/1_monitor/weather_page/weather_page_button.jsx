@@ -32,7 +32,7 @@ NavItem = React.createClass({
 	    return (
 			<li role="presentation" className={activeClass}>
 				<a href="#">
-					<img style={{height:'32px',paddingRight:'8px'}} src={'img/weather/weather_nav_'+this.props.nav.name+activeImg} />
+					<img style={{height:'32px',paddingRight:'8px'}} src={'img/weather/weather_navs_'+this.props.nav.name+activeImg} />
 					{this.props.nav.text}
 				</a>
 			</li>
