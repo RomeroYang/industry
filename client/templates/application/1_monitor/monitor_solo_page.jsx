@@ -78,6 +78,9 @@ MonitorSoloPage = React.createClass({
             text: '',
             x: -20 //center
         },
+        xAxis: {
+            categories: []
+        },
         yAxis: {
             plotLines: [{
                 value: 0,
@@ -92,6 +95,7 @@ MonitorSoloPage = React.createClass({
         //     borderWidth: 0
         // },
         series: [{
+            name: '',
             data: chart_data
         }]
     });
