@@ -14,8 +14,7 @@ WeatherDaily = React.createClass({
 		}
 		var displaydaily =  data.map(function (dat) {
 			return (
-				<DailyDetail date={dat.date} temp={dat.temperature} weat={dat.weather} mon={mon} day={day}>
-				</DailyDetail>
+				<DailyDetail key={dat.date} date={dat.date} temp={dat.temperature} weat={dat.weather} mon={mon} day={day} />
 			);
 		});
 	    return (

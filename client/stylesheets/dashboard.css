@@ -131,7 +131,9 @@ a:hover {
  * weather page
  */
 .pageheader {
-  background-color: #C8E6C9;
+  background-color: #f5f5f5;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .online-circle {
   display: inline-block;
