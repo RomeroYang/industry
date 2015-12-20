@@ -130,6 +130,11 @@ a:hover {
 /*
  * weather page
  */
+
+
+/*
+ * weather page header
+ */
 .pageheader {
   background-color: #666;
   padding-top: 15px;
@@ -155,6 +160,30 @@ a:hover {
   display: inline-block;
 }
 
+/*
+ * weather page navs
+ */
+ul.nav-justified {
+  background-color: #f5f5f5;
+}
+.nav-justified > li > a {
+  color: #999;
+}
+.nav-justified > li > a:hover {
+  color: #666;
+  background-color: transparent;
+}
+.nav-pills > li.weather-active > a, 
+.nav-pills > li.weather-active > a:hover, 
+.nav-pills > li.weather-active > a:focus {
+  background-color: transparent;
+  color: #fe895e;
+}
+
+
+/*
+ * weather page daily
+ */
 .pagedaily0{
   background-image: url(/img/weather/weather_bg_暴雨.png);
   background-repeat:no-repeat;
@@ -219,17 +248,6 @@ a:hover {
   background-image: url(/img/weather/weather_bg_中雨.png);
   background-repeat:no-repeat;
   background-size:contain;
-}
-
-ul.nav-justified {
-  background-color: #f5f5f5;
-}
-.nav-justified > li > a {
-  color: #999;
-}
-.nav-justified > li > a:hover {
-  color: #666;
-  background-color: transparent;
 }
 
 .rowdaily {
