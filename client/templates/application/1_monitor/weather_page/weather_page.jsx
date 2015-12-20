@@ -109,7 +109,8 @@ WeatherPage = React.createClass({
         // Once a connection has been made, make a subscription and send a message.
         console.log("connected");
         console.log(this.props.currentDevice.id);
-        client.subscribe(this.props.currentDevice.id + "/out");   //订阅消息
+        client.subscribe(this.props.currentDevice.id + "/out");
+        console.log("subscribed");
     };
 
     var history_msg_str = localStorage.getItem(this.props.currentDevice.id);
