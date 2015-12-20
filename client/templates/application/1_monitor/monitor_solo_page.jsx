@@ -38,7 +38,7 @@ MonitorSoloPage = React.createClass({
   _onMessageArrived(message) {
     //console.log("onMessageArrived:"+message.payloadString);
     var msg = JSON.parse(message.payloadString);
-    if (this.state.currentMessage == msg) {
+    if (this.state.currentMessage.temperature === msg.temperature) {
       //do nothing
     } else {
       var data_array_str = localStorage.getItem('60b3105c/d0bae40090fb');
@@ -74,6 +74,10 @@ MonitorSoloPage = React.createClass({
     var chart_data = this._getChartData(current_chart);
     var chart_container = this.refs.chart;
     $(chart_container).highcharts({
+        title: {
+            text: '',
+            x: -20 //center
+        },
         yAxis: {
             plotLines: [{
                 value: 0,
@@ -88,7 +92,6 @@ MonitorSoloPage = React.createClass({
         //     borderWidth: 0
         // },
         series: [{
-            name: 'Tokyo',
             data: chart_data
         }]
     });
@@ -128,10 +131,7 @@ MonitorSoloPage = React.createClass({
 		    <ul className="list-unstyled">
 		    	{this.renderDevices()}
 		    </ul>
-        <div>
-          {JSON.stringify(this.state.historyMessages)}
-        </div>
-        <div ref="chart"></div>
+        <div ref="chart" style={{height: '200px'}}></div>
 		  </div>
       </div>
     );
