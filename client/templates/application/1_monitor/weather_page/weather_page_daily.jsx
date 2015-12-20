@@ -19,7 +19,7 @@ WeatherPageDaily = React.createClass({
 		});
 
 		var pm25_state = {};
-		var pm25 = this.props.pm25-0;
+		var pm25 = this.props.weather.pm25-0;
 		if (pm25 < 50) {
 			pm25_state = {color: '#24B6FF', text: '空气优良'};
 		} else if (pm25 > 49 && pm25 < 100) {
@@ -56,7 +56,6 @@ DailyDetail = React.createClass({
     return (
       <div className="col-md-2">
       	<h3>{this.props.date.slice(0,3)}</h3>
-      	<h5>{this.props.mon+"月"+this.props.day+"日"}</h5>
       	<div>
       		<img className="weatherpic" src={weatherpic} />
       	</div>
@@ -66,3 +65,5 @@ DailyDetail = React.createClass({
     );
   }
 });
+
+//      	<h5>{this.props.mon+"月"+this.props.day+"日"}</h5>
