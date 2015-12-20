@@ -109,9 +109,9 @@ MonitorSoloPage = React.createClass({
     var history_msg = JSON.parse(history_msg_str);
 
     var current_chart = 'temperature';
-    setInterval(function() {
+    this.timer = setInterval(function() {
       this._showChart(current_chart);
-    }, 3000);
+    }.bind(this), 3000);
   },
 
   componentWillUnmount() {
