@@ -31,9 +31,7 @@ NavItem = React.createClass({
 
   	render() {
   		var isActive = this.props.activeNav == this.props.nav.name ? true:false;
-  		console.log(this.props.activeNav);
-  		console.log(this.props.nav.name);
-  		var activeClass = isActive ? 'active':'';
+  		var activeClass = isActive ? 'weather-active':'';
   		var activeImg = isActive ? '_p.png':'_n.png';
 	    return (
 			<li role="presentation" className={activeClass}>
