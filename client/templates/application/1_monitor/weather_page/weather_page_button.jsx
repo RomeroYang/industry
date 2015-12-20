@@ -25,13 +25,19 @@ WeatherNav = React.createClass({
 
 NavItem = React.createClass({
 
+	_changeNav() {
+		this.props.changeNav(this.props.nav.name);
+	},
+
   	render() {
   		var isActive = this.props.currentNav == this.props.nav.name ? true:false;
+  		console.log(this.props.currentNav);
+  		console.log(this.props.nav.name);
   		var activeClass = isActive ? 'active':'';
   		var activeImg = isActive ? '_p.png':'_n.png';
 	    return (
 			<li role="presentation" className={activeClass}>
-				<a href="#">
+				<a href="javascript:;" onClick={this._changeNav}>
 					<img style={{height:'48px',margin:'-8px',paddingRight:'8px'}} src={'img/weather/weather_navs_'+this.props.nav.name+activeImg} />
 					{this.props.nav.text}
 				</a>
