@@ -110,10 +110,11 @@ if (Meteor.isServer) {
 		);
 	};
 
-	setInterval(Meteor.bindEnvironment(function() {
-		console.log('fetchDevices');
-		fetchDevices();
-	}), 3600000);
+	fetchDevices();
+	// setInterval(Meteor.bindEnvironment(function() {
+	// 	console.log('fetchDevices');
+		
+	// }), 3600000);
 }
 // if (Navs.find().count() === 0) {
 //   Navs.insert({name: 'monitor', text: '监控中心'});
