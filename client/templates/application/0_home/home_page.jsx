@@ -76,7 +76,7 @@ OverviewItem = React.createClass({
   		case '设备数量':
   			return (
 				<div className="col-md-3">
-					<a style={{backgroundColor:'#24B6FF'}} onClick={this._changePage}>{this.props.item.text} : {this.props.devicesCount}</a>
+					<a href="javascript:;" style={{backgroundColor:'#24B6FF'}} onClick={this._changePage}>{this.props.item.text} : {this.props.devicesCount}</a>
 				</div>
 		    );
 		    break;
@@ -84,7 +84,7 @@ OverviewItem = React.createClass({
   		case '在线设备':
   			return (
 				<div className="col-md-3">
-					<a style={{backgroundColor:'#37CB8F'}} onClick={this._changePage}>{this.props.item.text} : {this.props.devicesOnlineCount}</a>
+					<a href="javascript:;" style={{backgroundColor:'#37CB8F'}} onClick={this._changePage}>{this.props.item.text} : {this.props.devicesOnlineCount}</a>
 				</div>
 		    );
 		    break;
@@ -92,7 +92,7 @@ OverviewItem = React.createClass({
   		case '故障消息':
   			return (
 				<div className="col-md-3">
-					<a style={{backgroundColor:'#FE895E'}} onClick={this._changePage}>{this.props.item.text} : 2</a>
+					<a href="javascript:;" style={{backgroundColor:'#FE895E'}} onClick={this._changePage}>{this.props.item.text} : 2</a>
 				</div>
 		    );
 		    break;
@@ -100,7 +100,7 @@ OverviewItem = React.createClass({
   		case '用户消息':
   			return (
 				<div className="col-md-3">
-					<a style={{backgroundColor:'#DD591F'}} onClick={this._changePage}>{this.props.item.text} : 3</a>
+					<a href="javascript:;" style={{backgroundColor:'#DD591F'}} onClick={this._changePage}>{this.props.item.text} : 3</a>
 				</div>
 		    );
 		    break;
