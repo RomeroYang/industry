@@ -6,7 +6,7 @@ Content = React.createClass({
       case 'home':
         return (
           <div className="container-fluid">
-            Welcome To MXCHIP IoT Site
+            <HomePage changePage={this.props.changePage} />
           </div>
         );
         break;

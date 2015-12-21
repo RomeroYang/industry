@@ -21,7 +21,7 @@ MonitorSoloPage = React.createClass({
   render() {
     return (
       <div className="container-fluid">
-		  <h3>设备列表</h3>
+		  <h4>设备列表</h4>
 
 		  <div className="row">
 		    <ul className="list-unstyled">
