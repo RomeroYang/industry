@@ -68,6 +68,7 @@ HomePage = React.createClass({
 OverviewItem = React.createClass({
 
   _changPage() {
+  	console.log('changePage: '+this.props.item.href)
     this.props.changePage(this.props.item.href);
   },
 
