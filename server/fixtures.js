@@ -73,35 +73,42 @@ if (Meteor.isServer) {
     	};
     	//console.log(cities);
 	};
-	HTTP.call(
-		"POST", 
-		"http://api.easylink.io/v1/device/fetchByPage",
-		{
-			headers: {
-	            "Authorization" : "token a1863b45-d3f3-454d-b951-ab58adfc7ec8",
-	            "X-Application-Id" : 'cc855e1a-f0f6-43c8-aeda-914b1f054e92'
-			}, 
-			data: {
-				limit: 10
-			}
-		},
-		function (error, result) {
-			if (error) {
-		        console.log("失败了" + error);
-			} else {
-		    	var data = result.data.data;
-		    	for (var i = 0; i < data.length; i++) {
-		    		var device_item = data[i];
-		    		device_item._id = device_item.id;
-		    		fetchLocation(device_item);
-		    	};
 
-		    	setTimeout(Meteor.bindEnvironment(function() {
-		    		getCities();
-		    	}), 10000);
+	function fetchDevices () {
+		HTTP.call(
+			"POST", 
+			"http://api.easylink.io/v1/device/fetchByPage",
+			{
+				headers: {
+		            "Authorization" : "token a1863b45-d3f3-454d-b951-ab58adfc7ec8",
+		            "X-Application-Id" : 'cc855e1a-f0f6-43c8-aeda-914b1f054e92'
+				}, 
+				data: {
+					limit: 10
+				}
+			},
+			function (error, result) {
+				if (error) {
+			        console.log("失败了" + error);
+				} else {
+			    	var data = result.data.data;
+			    	for (var i = 0; i < data.length; i++) {
+			    		var device_item = data[i];
+			    		device_item._id = device_item.id;
+			    		fetchLocation(device_item);
+			    	};
+
+			    	setTimeout(Meteor.bindEnvironment(function() {
+			    		getCities();
+			    	}), 3000);
+				}
 			}
-		}
-	);
+		);
+	};
+
+	setInterval(Meteor.bindEnvironment(function() {
+		fetchDevices();
+	}), 3600000);
 }
 // if (Navs.find().count() === 0) {
 //   Navs.insert({name: 'monitor', text: '监控中心'});
