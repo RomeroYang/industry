@@ -24,13 +24,13 @@ HomePage = React.createClass({
 
   	render() {
 	    return (
-	    	<div>
+	    	<div id="home-page">
 	    		<h4>概览</h4>
 		    	<div className="row">
 		    		{this._renderOverview()}
 		    	</div>
 	    		<h4>快捷入口</h4>
-		    	<div className="row">
+		    	<div className="row home-fast">
 		    		<div className="col-md-4">
 		    			<a>设备数量</a>
 		    		</div>
@@ -41,7 +41,7 @@ HomePage = React.createClass({
 		    			<a>故障消息</a>
 		    		</div>
 		    	</div>
-		    	<div className="row">
+		    	<div className="row home-fast">
 		    		<div className="col-md-4">
 		    			<a>设备数量</a>
 		    		</div>
@@ -52,7 +52,7 @@ HomePage = React.createClass({
 		    			<a>故障消息</a>
 		    		</div>
 		    	</div>
-		    	<div className="row">
+		    	<div className="row home-fast">
 		    		<div className="col-md-4">
 		    			<a>设备数量</a>
 		    		</div>
@@ -76,28 +76,28 @@ OverviewItem = React.createClass({
   		case '设备数量':
   			return (
 				<div className="col-md-3">
-					<a onClick={this._changePage}>{this.props.item.text} : {this.props.devicesCount}</a>
+					<a style={backgroundColor:'#24B6FF'} onClick={this._changePage}>{this.props.item.text} : {this.props.devicesCount}</a>
 				</div>
 		    );
 		    break;
   		case '在线设备':
   			return (
 				<div className="col-md-3">
-					<a onClick={this._changePage}>{this.props.item.text} : {this.props.devicesOnlineCount}</a>
+					<a style={backgroundColor:'#37CB8F'} onClick={this._changePage}>{this.props.item.text} : {this.props.devicesOnlineCount}</a>
 				</div>
 		    );
 		    break;
   		case '故障消息':
   			return (
 				<div className="col-md-3">
-					<a onClick={this._changePage}>{this.props.item.text} : 2</a>
+					<a style={backgroundColor:'#FE895E'} onClick={this._changePage}>{this.props.item.text} : 2</a>
 				</div>
 		    );
 		    break;
   		case '用户消息':
   			return (
 				<div className="col-md-3">
-					<a onClick={this._changePage}>{this.props.item.text} : 3</a>
+					<a style={backgroundColor:'#DD591F'} onClick={this._changePage}>{this.props.item.text} : 3</a>
 				</div>
 		    );
 		    break;

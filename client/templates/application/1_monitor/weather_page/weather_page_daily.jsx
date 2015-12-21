@@ -33,7 +33,7 @@ WeatherPageDaily = React.createClass({
 	      <div className={"container-fluid" + " " + "pagedaily" + bgp}>
 			    <div className="row rowdaily">
 					<div className="col-md-4">
-					<br/><br/><br/><br/><br/><br/><br/><br/>
+					<br/><br/><br/><br/><br/><br/><br/>
 						<h4>{this.props.weather.weather_data[0].temperature}</h4>
 			      		<h4>{this.props.weather.weather_data[0].weather}</h4>
 			      		<h4>{this.props.weather.weather_data[0].wind}</h4>
