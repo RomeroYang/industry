@@ -134,6 +134,7 @@ div#home-page .row div {
   margin: 24px 0;
 }
 div#home-page .row a {
+  display: block;
   padding: 24px 0;
   width: 100%;
   text-align: center;
